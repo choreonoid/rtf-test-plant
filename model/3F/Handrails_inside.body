@@ -1,0 +1,55 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: Handrails_inside
+
+HANDRAILS_RESOURCE: &HANDRAILS_RESOURCE
+  type: Resource
+  uri: "../resource/HandrailParts.yaml"
+  
+links:
+  -
+    name: Handrails_in_base
+    jointType: fixed
+  - 
+    name: Handrails_in_front
+    parent: Handrails_in_base
+    jointType: fixed
+    translation: [ 1.0335, 1.05, -0.075 ]
+    rotation: [ 0, 0, 1, 90 ]
+    elements:
+      Collision:
+        elements: 
+          <<: *HANDRAILS_RESOURCE
+          node: 3F_HANDRAILS_IN_FRONT
+  - 
+    name: Handrails_in_left
+    parent: Handrails_in_base
+    jointType: fixed
+    translation: [ 1.0765, 1.0334, -0.075 ]
+    elements:
+      Collision:
+        elements: 
+          <<: *HANDRAILS_RESOURCE
+          node: HANDRAILS_IN_LEFT
+  - 
+    name: Handrails_in_right
+    parent: Handrails_in_base
+    jointType: fixed
+    translation: [ 1.3723, 10.681, 0.00 ]
+    elements:
+      Collision:
+        elements: 
+          <<: *HANDRAILS_RESOURCE
+          node: HANDRAILS_IN_RIGHT
+  - 
+    name: Handrails_in_rear
+    parent: Handrails_in_base
+    jointType: fixed
+    translation: [ 9.0217, 2.376, 0.00 ]
+    rotation: [ 0, 0, 1, 90 ]
+    elements:
+      Collision:
+        elements: 
+          <<: *HANDRAILS_RESOURCE
+          node: HANDRAILS_IN_REAR

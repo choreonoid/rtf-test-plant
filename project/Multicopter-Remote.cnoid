@@ -1,0 +1,197 @@
+items: 
+  id: 0
+  name: "Root"
+  plugin: Base
+  class: RootItem
+  children: 
+    - 
+      id: 1
+      name: "Multicopter"
+      plugin: Body
+      class: BodyItem
+      data: 
+        modelFile: "${SHARE}/model/multicopter/multicopter.body"
+        currentBaseLink: "BODY"
+        rootPosition: [ 15, 6, 0.1149 ]
+        rootAttitude: [ 
+          -1, 0, 0, 
+          0, -1, 0, 
+          0, 0, 1 ]
+        jointPositions: [ -0.000000,  0.000004,  0.000004,  0.000004,  0.000004 ]
+        initialRootPosition: [ 15, 6, 0.1149 ]
+        initialRootAttitude: [ 
+          -1, 0, 0, 
+          0, -1, 0, 
+          0, 0, 1 ]
+        initialJointPositions: [  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
+        zmp: [ 0, 0, 0 ]
+        collisionDetection: true
+        selfCollisionDetection: false
+        isEditable: true
+      children: 
+        - 
+          id: 2
+          name: "MulticopterController"
+          plugin: Body
+          class: SimpleControllerItem
+          data: 
+            isNoDelayMode: true
+            controllerOptions: ""
+            controller: "MulticopterController.so"
+            baseDirectory: "Controller directory"
+            reloading: false
+          children:
+            - 
+              id: 3
+              name: "MulticopterJoystickInput"
+              plugin: Body
+              class: SimpleControllerItem
+              data: 
+                isNoDelayMode: true
+                controllerOptions: ""
+                controller: "RemoteJoystickInputController.so"
+                baseDirectory: "Controller directory"
+                reloading: false
+        - 
+          id: 4
+          name: "VisionIoSensorRTC"
+          plugin: OpenRTM
+          class: BodyIoRTCItem
+          data: 
+            isNoDelayMode: true
+            controllerOptions: ""
+            module: "VisionSensorIoRTC.so"
+            baseDirectory: "RTC directory"
+            instanceName: ""
+            periodicRate: 0
+        - 
+          id: 5
+          name: "BodyTrackingCamera"
+          plugin: Body
+          class: BodyTrackingCameraItem
+          data: 
+            keepRelativeAttitude: false
+            nearClipDistance: 0.01
+            farClipDistance: 100
+views: 
+  - 
+    id: 1
+    plugin: Base
+    class: ItemTreeView
+    mounted: true
+    state: 
+      selected: [ ]
+      checked: [ 1, 5 ]
+      expanded: [ 1, 2 ]
+  - 
+    id: 3
+    plugin: Base
+    class: SceneView
+    mounted: true
+    state: 
+      editMode: true
+      viewpointControlMode: thirdPerson
+      collisionLines: false
+      polygonMode: fill
+      defaultHeadLight: true
+      defaultHeadLightIntensity: 0.75
+      headLightLightingFromBack: false
+      worldLight: true
+      worldLightIntensity: 0.5
+      worldLightAmbient: 0.3
+      additionalLights: true
+      fog: true
+      floorGrid: true
+      floorGridSpan: 10
+      floorGridInterval: 0.5
+      xzGridSpan: 10
+      xzGridInterval: 0.5
+      xzGrid: false
+      yzGridSpan: 10
+      yzGridInterval: 0.5
+      texture: true
+      lineWidth: 1
+      pointSize: 1
+      normalVisualization: false
+      normalLength: 0.01
+      coordinateAxes: true
+      fpsTestIteration: 1
+      showFPS: false
+      enableNewDisplayListDoubleRendering: false
+      useBufferForPicking: true
+      upsideDown: false
+      cameras: 
+        - 
+          camera: [ System, Perspective ]
+          fieldOfView: 0.698132
+          near: 0.01
+          far: 100
+          eye: [ -2.34089605, -1.31751451, 1.42974889 ]
+          direction: [ 0.818052366, 0.438501061, -0.372165483 ]
+          up: [ 0.328013227, 0.175825111, 0.928166393 ]
+        - 
+          camera: [ System, Orthographic ]
+          orthoHeight: 20
+          near: 0.01
+          far: 100
+        - 
+          camera: BodyTrackingCamera
+          isCurrent: true
+          fieldOfView: 0.785398
+          near: 0.01
+          far: 100
+          eye: [ 16.6299682, 6.61094368, 0.762391403 ]
+          direction: [ -0.953503189, -0.233805277, -0.190175605 ]
+          up: [ -0.184703875, -0.0452906097, 0.98175009 ]
+      backgroundColor: [ 0.100000001, 0.100000001, 0.300000012 ]
+      gridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      xzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      yzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      dedicatedItemTreeViewChecks: false
+  - 
+    id: 4
+    name: "Camera Scene"
+    plugin: Base
+    class: SceneView
+    mounted: true
+    state: 
+      editMode: false
+      viewpointControlMode: thirdPerson
+      collisionLines: false
+      polygonMode: fill
+      defaultHeadLight: true
+      defaultHeadLightIntensity: 0.75
+      headLightLightingFromBack: false
+      worldLight: true
+      worldLightIntensity: 0.5
+      worldLightAmbient: 0.3
+      additionalLights: true
+      fog: true
+      floorGrid: true
+      floorGridSpan: 10
+      floorGridInterval: 0.5
+      xzGridSpan: 10
+      xzGridInterval: 0.5
+      xzGrid: false
+      yzGridSpan: 10
+      yzGridInterval: 0.5
+      texture: true
+      lineWidth: 1
+      pointSize: 1
+      normalVisualization: false
+      normalLength: 0.01
+      coordinateAxes: true
+      fpsTestIteration: 1
+      showFPS: false
+      enableNewDisplayListDoubleRendering: false
+      useBufferForPicking: true
+      upsideDown: false
+      cameras: 
+        - 
+          camera: [ Multicopter, Camera ]
+          isCurrent: true
+      backgroundColor: [ 0.100000001, 0.100000001, 0.300000012 ]
+      gridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      xzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      yzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      dedicatedItemTreeViewChecks: false

@@ -1,0 +1,677 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: 3F
+
+HANDRAILS_RESOURCE: &HANDRAILS_RESOURCE
+  type: Resource
+  uri: "../resource/HandrailParts.yaml"
+  
+TANK_STAIRS_W: &TANK_STAIRS_W 0.375
+MTANK_STAIRS_W: &MTANK_STAIRS_W -0.375
+MTANK_STAIRS_W2: &MTANK_STAIRS_W2 -0.18525
+TANK_STAIRS_ANGLE: &TANK_STAIRS_ANGLE 5
+
+links:
+  -
+    name: Floor
+    jointType: fixed
+    mass: 200.0
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+  -
+    name: Floor1
+    parent: Floor
+    jointType: fixed
+    translation: [ 10.175, 0.0, 10.2 ]
+    material: Ground
+    elements:
+      Visual:
+        resource:
+          uri: "resource/Floor.dae"
+      Collision:
+       resource: { uri: "../resource/CommonParts.yaml", 
+                   node: 3F_FLOOR }
+  - 
+    type: SubBody
+    uri: ../1F/ColumnsSub.body
+    parent: Floor1
+  -
+    name: COLUMNS
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Visual:
+        resource: 
+          uri: "resource/Columns.dae"
+  -
+    name: Floor2
+    parent: Floor1
+    jointType: fixed
+    material: Ground
+    translation: [ 0.0, 0.0, 2.58]
+    elements:
+      Visual:
+        resource: 
+          translation: [ 0.0, 0, -2.68 ]
+          uri: "resource/Floor2.dae"
+      Collision:
+        resource: { uri: "../resource/CommonParts.yaml", 
+                    node: 3F_CATWALK }
+  -
+    name: STAIRS
+    parent: Floor1
+    jointType: fixed
+    material: Ground
+    translation: [ 8.8, 1.57, -0.1 ]
+    elements:
+      Collision:
+        resource: { uri: "../resource/CommonParts.yaml", 
+                    node: 2F_STAIRS }
+  -
+    name: Handrails
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Visual:
+        resource: 
+          uri: "resource/Handrails.dae"
+  - 
+    type: SubBody
+    uri: Handrails_outside.body
+    prefix: 3F_
+    parent: Floor1
+  - 
+    type: SubBody 
+    uri: Handrails_outside.body
+    prefix: 3MiddleFloor_
+    parent: Floor2
+    translation: [ 0.0, 0.0, -0.08 ]
+  - 
+    type: SubBody 
+    uri: Handrails_inside.body
+    parent: Floor2
+  -
+    name: Handrails_stairs_top
+    parent: Floor2
+    jointType: fixed
+    translation: [ 8.325, 1.97, 0.0 ]
+    rotation: [ 0, 0, 1, -90 ]
+    elements:
+      Collision:
+        elements: 
+          <<: *HANDRAILS_RESOURCE
+          node: HANDRAILS_STAIRS_TOP
+  - 
+    type: SubBody 
+    uri: ../2F/Handrails_stairs.body
+    parent: Floor1
+    translation: [ 9.275, 4.33, 0.0 ]
+    rotation: [ 0, 0, 1, -90 ]
+  -
+    name: Tank1
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Visual:
+        resource: 
+          translation: [ 0.0, 0, 0.0 ]
+          uri: "resource/Tank.dae"
+      Collision:
+        elements:
+          Transform:
+            translation: [ 5.9745, 8.288, 0.0 ]
+            rotation: [ 0, 0, 1, 7.5 ]
+            elements: &TANK_HALF
+              - &TANK_SHAPE
+                type: Shape
+                translation: [ -0.3655, -0.07, 2.5 ]
+                geometry:   
+                  { type: Box, size: [ 0.731, 0.139, 5 ]  }
+              - 
+                type: Transform
+                translation: [ -0.73, 0.0, 0.0 ]
+                rotation: [ 0, 0, 1, 15 ]
+                elements: 
+                  -
+                    *TANK_SHAPE
+                  - 
+                    type: Transform
+                    translation: [ -0.731, 0.0, 0.0 ]
+                    rotation: [ 0, 0, 1, 15 ]
+                    elements: 
+                      -
+                        *TANK_SHAPE
+                      - 
+                        type: Transform
+                        translation: [ -0.731, 0.0, 0.0 ]
+                        rotation: [ 0, 0, 1, 15 ]
+                        elements: 
+                          -
+                            *TANK_SHAPE
+                          - 
+                            type: Transform
+                            translation: [ -0.731, 0.0, 0.0 ]
+                            rotation: [ 0, 0, 1, 15 ]
+                            elements: 
+                              -
+                                *TANK_SHAPE
+                              - 
+                                type: Transform
+                                translation: [ -0.731, 0.0, 0.0 ]
+                                rotation: [ 0, 0, 1, 15 ]
+                                elements: 
+                                  -
+                                    *TANK_SHAPE
+  -
+    name: Tank2
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          Transform:
+            translation: [ 3.175, 5.488, 0.0 ]
+            rotation: [ 0, 0, 1, 97.5 ]
+            elements: *TANK_HALF
+            
+  -
+    name: Tank_Stairs1
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Visual:
+        resource: 
+          translation: [ 0.0, 0, -0.1 ]
+          uri: "resource/Stairs.dae"
+      Collision:
+        elements:
+          Transform:
+            translation: [ 5.975, 9.29, -0.1 ]
+            elements: &TANK_STAIRS_HALF
+              - &TANK_STAIRS_STEP
+                type: Transform
+                elements: 
+                  - 
+                    type: Shape
+                    translation: [ -0.0825, -0.5, 0.02 ]
+                    geometry:   
+                      { type: Box, size: [ 0.165, 1.0, 0.04 ]  }
+                  - 
+                    type: Shape
+                    translation: [ -0.2036, -0.5053, 0.02 ]
+                    rotation: [ 0, 0, 1, 5 ]
+                    geometry:   
+                      { type: Box, size: [ 0.165, 1.0, 0.04 ]  }
+                  - 
+                    type: Shape
+                    translation: [ -0.1213, -1.003, 0.02 ]
+                    rotation: [ 0, 0, 1, 7.5 ]
+                    geometry:   
+                      { type: Box, size: [ 0.2415, 0.03, 0.04 ]  }
+              -
+                type: Transform
+                translation: [ -0.331, -0.0145, 0.20833 ]
+                rotation: [ 0, 0, 1, 5]
+                elements:
+                  - 
+                    *TANK_STAIRS_STEP
+                  -
+                    type: Transform
+                    translation: [ -0.331, -0.0145, 0.20833 ]
+                    rotation: [ 0, 0, 1, 5]
+                    elements:
+                      - 
+                        *TANK_STAIRS_STEP
+                      -
+                        type: Transform
+                        translation: [ -0.331, -0.0145, 0.20833 ]
+                        rotation: [ 0, 0, 1, 5]
+                        elements:
+                          - 
+                            *TANK_STAIRS_STEP
+                          -
+                            type: Transform
+                            translation: [ -0.331, -0.0145, 0.20833 ]
+                            rotation: [ 0, 0, 1, 5]
+                            elements:
+                              - 
+                                *TANK_STAIRS_STEP
+                              -
+                                type: Transform
+                                translation: [ -0.331, -0.0145, 0.20833 ]
+                                rotation: [ 0, 0, 1, 5]
+                                elements:
+                                  - 
+                                    *TANK_STAIRS_STEP
+                                  -
+                                    type: Transform
+                                    translation: [ -0.331, -0.0145, 0.20833 ]
+                                    rotation: [ 0, 0, 1, 5]
+                                    elements:
+                                      - 
+                                        *TANK_STAIRS_STEP
+                                      -
+                                        type: Transform
+                                        translation: [ -0.331, -0.0145, 0.20833 ]
+                                        rotation: [ 0, 0, 1, 5]
+                                        elements:
+                                          - 
+                                            *TANK_STAIRS_STEP
+                                          -
+                                            type: Transform
+                                            translation: [ -0.331, -0.0145, 0.20833 ]
+                                            rotation: [ 0, 0, 1, 5]
+                                            elements:
+                                              - 
+                                                *TANK_STAIRS_STEP
+                                              -
+                                                type: Transform
+                                                translation: [ -0.331, -0.0145, 0.20833 ]
+                                                rotation: [ 0, 0, 1, 5]
+                                                elements:
+                                                  - 
+                                                    *TANK_STAIRS_STEP
+                                                  -
+                                                    type: Transform
+                                                    translation: [ -0.331, -0.0145, 0.20833 ]
+                                                    rotation: [ 0, 0, 1, 5]
+                                                    elements:
+                                                      - 
+                                                        *TANK_STAIRS_STEP
+  -
+    name: Tank_stairs3
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            type: Transform
+            translation: [ 2.685, 3.584, 2.4 ]
+            rotation: [ 0, 0, 1, 120 ]
+            elements: *TANK_STAIRS_HALF
+          -
+            type: Transform
+            translation: [ 5.646, 1.7, 4.69163 ]
+            rotation: [ 0, 0, 1, 175]
+            elements: *TANK_STAIRS_STEP
+  -
+    name: Tank_stairs2
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          Transform:
+            translation: [ 2.455, 7.952, 2.19167 ]
+            rotation: [ 0, 0, 1, 55 ]
+            elements: 
+              - &TANK_STAIRS_MIDDLE_STEP
+                type: Shape
+                translation: [ *MTANK_STAIRS_W2, -0.75, 0.02 ]
+                geometry:   
+                  { type: Box, size: [ *TANK_STAIRS_W, 1.5, 0.04 ]  }
+              - 
+                type: Transform
+                translation: [ *MTANK_STAIRS_W, 0.0, 0.0 ]
+                rotation: [ 0, 0, 1, 7 ]
+                elements: 
+                  -
+                    *TANK_STAIRS_MIDDLE_STEP
+                  - 
+                    type: Transform
+                    translation: [ *MTANK_STAIRS_W, 0.0, 0.0 ]
+                    rotation: [ 0, 0, 1, 6 ]
+                    elements: 
+                      -
+                        *TANK_STAIRS_MIDDLE_STEP
+                      - 
+                        type: Transform
+                        translation: [ *MTANK_STAIRS_W, 0.0, 0.0 ]
+                        rotation: [ 0, 0, 1, *TANK_STAIRS_ANGLE ]
+                        elements: 
+                          -
+                            *TANK_STAIRS_MIDDLE_STEP
+                          - 
+                            type: Transform
+                            translation: [ *MTANK_STAIRS_W, 0.0, 0.0 ]
+                            rotation: [ 0, 0, 1, *TANK_STAIRS_ANGLE ]
+                            elements: 
+                              -
+                                *TANK_STAIRS_MIDDLE_STEP
+                              - 
+                                type: Transform
+                                translation: [ *MTANK_STAIRS_W, 0.0, 0.0 ]
+                                rotation: [ 0, 0, 1, *TANK_STAIRS_ANGLE ]
+                                elements: 
+                                  -
+                                    *TANK_STAIRS_MIDDLE_STEP
+                                  - 
+                                    type: Transform
+                                    translation: [ *MTANK_STAIRS_W, 0.0, 0.0 ]
+                                    rotation: [ 0, 0, 1, *TANK_STAIRS_ANGLE ]
+                                    elements: 
+                                      -
+                                        *TANK_STAIRS_MIDDLE_STEP
+                                      - 
+                                        type: Transform
+                                        translation: [ *MTANK_STAIRS_W, 0.0, 0.0 ]
+                                        rotation: [ 0, 0, 1, *TANK_STAIRS_ANGLE ]
+                                        elements: 
+                                          -
+                                            *TANK_STAIRS_MIDDLE_STEP
+                                          - 
+                                            type: Transform
+                                            translation: [ *MTANK_STAIRS_W, 0.0, 0.0 ]
+                                            rotation: [ 0, 0, 1, *TANK_STAIRS_ANGLE ]
+                                            elements: 
+                                              -
+                                                *TANK_STAIRS_MIDDLE_STEP
+                                              - 
+                                                type: Transform
+                                                translation: [ *MTANK_STAIRS_W, 0.0, 0.0 ]
+                                                rotation: [ 0, 0, 1, 4 ]
+                                                elements: 
+                                                  -
+                                                    *TANK_STAIRS_MIDDLE_STEP
+                                                  - 
+                                                    type: Transform
+                                                    translation: [ *MTANK_STAIRS_W, 0.0, 0.0 ]
+                                                    rotation: [ 0, 0, 1, 5 ]
+                                                    elements: 
+                                                      -
+                                                        *TANK_STAIRS_MIDDLE_STEP
+                                                      - 
+                                                        type: Transform
+                                                        translation: [ *MTANK_STAIRS_W, 0.0, 0.0 ]
+                                                        rotation: [ 0, 0, 1, 5 ]
+                                                        elements: 
+                                                          -
+                                                            *TANK_STAIRS_MIDDLE_STEP
+                                                          - 
+                                                            type: Transform
+                                                            translation: [ *MTANK_STAIRS_W, 0.0, 0.0 ]
+                                                            rotation: [ 0, 0, 1, 7 ]
+                                                            elements: 
+                                                              -
+                                                                *TANK_STAIRS_MIDDLE_STEP
+  -
+    name: Stairs_Handrails1
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Visual:
+        resource: 
+          translation: [ 0.0, 0, 0.0 ]
+          uri: "resource/StairsHandrails.dae"
+      Collision:
+        elements:
+          -
+            type: Transform
+            translation: [ 5.809, 9.298, 0.0 ]
+            rotation: [ 0, 0, 1, 5 ]
+            elements: &STAIR_HANDRAILS_HALF
+              -
+                type: Transform
+                translation: [ 0.16625, 0.0, -0.104]
+                elements:
+                  Shape:
+                    translation: [ 0.001, -0.005, 1.125 ]
+                    rotation: [ 1, 0, 0, 90 ]
+                    geometry: { type: Cylinder, radius: 0.02, height: 0.06}
+              - &STAIR_HANDRAILS_SHAPE
+                type: Transform
+                elements:
+                  - &STAIR_HANDRAILS_PILLAR_SHAPE
+                    type: Shape
+                    rotation: [ 1, 0, 0, 90 ]
+                    translation: [ 0.0, 0.0, 0.575 ]
+                    geometry: { type: Cylinder, radius: 0.014, height: 1.15 }
+                  -
+                    type: Shape
+                    rotation: [ [ 0, 0, 1, 87.5 ], [ 1, 0, 0, 32 ] ]
+                    translation: [ 0.0, 0.002, 1.145 ]
+                    geometry: { type: Cylinder, radius: 0.02, height: 0.417}
+              - 
+                type: Transform
+                translation: [ -0.3325, 0.0, 0.208]
+                rotation: [ 0, 0, 1, 5 ]
+                elements:
+                  -
+                    *STAIR_HANDRAILS_SHAPE
+                  -
+                    type: Transform
+                    translation: [ -0.3325, 0.0, 0.208]
+                    rotation: [ 0, 0, 1, 5 ]
+                    elements:
+                      -
+                        *STAIR_HANDRAILS_SHAPE
+                      -
+                        type: Transform
+                        translation: [ -0.3325, 0.0, 0.208]
+                        rotation: [ 0, 0, 1, 5 ]
+                        elements:
+                          -
+                            *STAIR_HANDRAILS_SHAPE
+                          -
+                            type: Transform
+                            translation: [ -0.3325, 0.0, 0.208]
+                            rotation: [ 0, 0, 1, 5 ]
+                            elements:
+                              -
+                                *STAIR_HANDRAILS_SHAPE
+                              -
+                                type: Transform
+                                translation: [ -0.3325, 0.0, 0.208]
+                                rotation: [ 0, 0, 1, 5 ]
+                                elements:
+                                  -
+                                    *STAIR_HANDRAILS_SHAPE
+                                  -
+                                    type: Transform
+                                    translation: [ -0.3325, 0.0, 0.208]
+                                    rotation: [ 0, 0, 1, 5 ]
+                                    elements:
+                                      -
+                                        *STAIR_HANDRAILS_SHAPE
+                                      -
+                                        type: Transform
+                                        translation: [ -0.3325, 0.0, 0.208]
+                                        rotation: [ 0, 0, 1, 5 ]
+                                        elements:
+                                          -
+                                            *STAIR_HANDRAILS_SHAPE
+                                          -
+                                            type: Transform
+                                            translation: [ -0.3325, 0.0, 0.208]
+                                            rotation: [ 0, 0, 1, 5 ]
+                                            elements:
+                                              -
+                                                *STAIR_HANDRAILS_SHAPE
+                                              -
+                                                type: Transform
+                                                translation: [ -0.3325, 0.0, 0.208]
+                                                rotation: [ 0, 0, 1, 5 ]
+                                                elements:
+                                                  -
+                                                    *STAIR_HANDRAILS_SHAPE
+                                                  -
+                                                    type: Transform
+                                                    translation: [ -0.3325, 0.0, 0.208]
+                                                    rotation: [ 0, 0, 1, 5 ]
+                                                    elements:
+                                                      -
+                                                        *STAIR_HANDRAILS_PILLAR_SHAPE
+                                                      -
+                                                        type: Shape
+                                                        rotation: [ [ 0, 0, 1, 86.5 ], [ 1, 0, 0, 32 ] ]
+                                                        translation: [ 0.03, 0.003, 1.126 ]
+                                                        geometry: { type: Cylinder, radius: 0.02, height: 0.32 }
+  -
+    name: Stairs_Handrails3
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            type: Transform
+            translation: [ 2.759, 3.438, 2.5 ] 
+            rotation: [ 0, 0, 1, 125 ]
+            elements: 
+              -
+                type: Transform
+                elements: *STAIR_HANDRAILS_HALF
+              -
+                type: Transform
+                translation: [ 0.16625, 0.0, -0.104]
+                elements:
+                  Shape:
+                    translation: [ 0.001, -0.005, 1.02 ]
+                    rotation: [ 1, 0, 0, 90 ]
+                    geometry: { type: Cylinder, radius: 0.02, height: 0.2}
+          -
+            type: Transform
+            translation: [ 5.809, 1.677, 4.79163 ]
+            rotation: [ 0, 0, 1, 180]
+            elements: 
+              -
+                *STAIR_HANDRAILS_PILLAR_SHAPE
+              -
+                type: Shape
+                rotation: [ [ 0, 0, 1, 86.5 ], [ 1, 0, 0, 32 ] ]
+                translation: [ 0.032, 0.002, 1.123 ]
+                geometry: { type: Cylinder, radius: 0.02, height: 0.47 }
+  -
+    name: Stairs_Handrails2
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            type: Transform
+            translation: [ 2.4415, 7.9608, 2.29 ]
+            rotation: [ 0, 0, 1, 57.8 ]
+            elements: 
+              - &STAIR_HANDRAILS2_SHAPE
+                type: Transform
+                elements:
+                  - &STAIR_HANDRAILS2_PILLAR_SHAPE
+                    type: Shape
+                    rotation: [ 1, 0, 0, 90 ]
+                    translation: [ 0.0, 0.0, 0.47 ]
+                    geometry: { type: Cylinder, radius: 0.0135, height: 0.94 }
+                  -
+                    type: Shape
+                    rotation: [ 0, 0, 1, 90 ]
+                    translation: [ -0.197, -0.002, 0.943 ]
+                    geometry: { type: Cylinder, radius: 0.02, height: 0.42}
+              -
+                type: Transform
+                translation: [ -0.407, 0.0, 0.0 ]
+                rotation: [ 0, 0, 1, 5 ]
+                elements:
+                  -
+                    *STAIR_HANDRAILS2_SHAPE
+                  -
+                    type: Transform
+                    translation: [ -0.407, 0.0, 0.0 ]
+                    rotation: [ 0, 0, 1, 6 ]
+                    elements:
+                      -
+                        *STAIR_HANDRAILS2_SHAPE
+                      -
+                        type: Transform
+                        translation: [ -0.407, 0.0, 0.0 ]
+                        rotation: [ 0, 0, 1, 5 ]
+                        elements:
+                          -
+                            *STAIR_HANDRAILS2_SHAPE
+                          -
+                            type: Transform
+                            translation: [ -0.407, 0.0, 0.0 ]
+                            rotation: [ 0, 0, 1, 5.5 ]
+                            elements:
+                              -
+                                *STAIR_HANDRAILS2_SHAPE
+                              -
+                                type: Transform
+                                translation: [ -0.407, 0.0, 0.0 ]
+                                rotation: [ 0, 0, 1, 5.5 ]
+                                elements:
+                                  -
+                                    *STAIR_HANDRAILS2_SHAPE
+                                  -
+                                    type: Transform
+                                    translation: [ -0.409, 0.0, 0.0 ]
+                                    rotation: [ 0, 0, 1, 5.5 ]
+                                    elements:
+                                      -
+                                        *STAIR_HANDRAILS2_SHAPE
+                                      -
+                                        type: Transform
+                                        translation: [ -0.407, 0.0, 0.0 ]
+                                        rotation: [ 0, 0, 1, 5.5 ]
+                                        elements:
+                                          -
+                                            *STAIR_HANDRAILS2_SHAPE
+                                          -
+                                            type: Transform
+                                            translation: [ -0.407, 0.0, 0.0 ]
+                                            rotation: [ 0, 0, 1, 5.0 ]
+                                            elements:
+                                              -
+                                                *STAIR_HANDRAILS2_SHAPE
+                                              -
+                                                type: Transform
+                                                translation: [ -0.407, 0.0, 0.0 ]
+                                                rotation: [ 0, 0, 1, 5.5 ]
+                                                elements:
+                                                  -
+                                                    *STAIR_HANDRAILS2_SHAPE
+                                                  -
+                                                    type: Transform
+                                                    translation: [ -0.409, 0.0, 0.0 ]
+                                                    rotation: [ 0, 0, 1, 5.8 ]
+                                                    elements:
+                                                      -
+                                                        *STAIR_HANDRAILS2_SHAPE
+                                                      -
+                                                        type: Transform
+                                                        translation: [ -0.411, 0.0, 0.0 ]
+                                                        rotation: [ 0, 0, 1, 5.0 ]
+                                                        elements:
+                                                          -
+                                                            *STAIR_HANDRAILS2_SHAPE
+              -
+                type: Transform
+                translation: [ 0.0015, -0.263, 0.0 ]
+                rotation: [ 0, 0, 1, 0.7 ]
+                elements:
+                  -
+                    *STAIR_HANDRAILS2_PILLAR_SHAPE
+                  -
+                    type: Shape
+                    translation: [ -0.004, 0.031, 0.933 ]
+                    rotation: [ 1, 0, 0, 1.5 ]
+                    geometry: { type: Cylinder, radius: 0.02, height: 0.5}
+              -
+                type: Transform
+                translation: [ -3.801, -2.43, 0.0 ]
+                rotation: [ 0, 0, 1, 57.5 ]
+                elements:
+                  -
+                    *STAIR_HANDRAILS2_PILLAR_SHAPE
+                  -
+                    type: Shape
+                    translation: [ -0.004, 0.02, 0.952 ]
+                    rotation: [ 1, 0, 0, -2.3 ]
+                    geometry: { type: Cylinder, radius: 0.02, height: 0.5}      
+                  -
+                    <<: *STAIR_HANDRAILS2_PILLAR_SHAPE
+                    translation: [ -0.004, 0.26, 0.47 ]
+                    

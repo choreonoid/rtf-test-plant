@@ -1,0 +1,794 @@
+RADIUS: &RADIUS 0.017
+HEIGHT: &HEIGHT 0.9
+HEIGHTH: &HEIGHTH 0.45
+INTERVAL: &INTERVAL 0.2626
+MINTERVAL: &MINTERVAL -0.2626
+INTERVAL5: &INTERVAL5 1.3125
+
+SILVER: &SILVER
+  material:
+    diffuseColor: [ 0.96, 0.96, 0.96 ]
+    specularColor: [ 0.96, 0.96, 0.96 ]
+    shininess: 0.12
+    
+PILLAR_SHAPE: &PILLAR_SHAPE
+  type: Shape
+  rotation: [ 1, 0, 0, 90 ]
+  geometry: { type: Cylinder, radius: *RADIUS, height: *HEIGHT }
+  appearance: *SILVER
+    
+PILLAR5: &PILLAR5
+  type: Transform
+  translation: [ *INTERVAL, 0.0, *HEIGHTH ]
+  elements:
+    -
+      <<: *PILLAR_SHAPE
+    - 
+      type: Transform
+      translation: [ *INTERVAL, 0.0, 0.0 ]
+      elements:
+        -
+          <<: *PILLAR_SHAPE
+        - 
+          type: Transform
+          translation: [ *INTERVAL, 0.0, 0.0 ]
+          elements:
+            -
+              <<: *PILLAR_SHAPE
+            - 
+              type: Transform
+              translation: [ *INTERVAL, 0.0, 0.0 ]
+              elements:
+                -
+                  <<: *PILLAR_SHAPE
+                - 
+                  type: Transform
+                  translation: [ *INTERVAL, 0.0, 0.0 ]
+                  elements:
+                      <<: *PILLAR_SHAPE
+
+PILLAR20: &PILLAR20
+  type: Transform
+  elements:
+    -
+      <<: *PILLAR5
+    -
+      type: Transform
+      translation: [ *INTERVAL5, 0.0, 0.0 ]
+      elements:
+        -
+          <<: *PILLAR5
+        -
+          type: Transform
+          translation: [ *INTERVAL5, 0.0, 0.0 ]
+          elements:
+            -
+              <<: *PILLAR5
+            -
+              type: Transform
+              translation: [ *INTERVAL5, 0.0, 0.0 ]
+              elements:
+                  <<: *PILLAR5
+
+HANDRAILS1: &HANDRAILS1
+  type: Transform
+  elements:
+    -
+      type: Shape
+      translation: [ 2.763, 0.0, 0.9 ]
+      rotation: [ 0, 0, 1, 90 ]
+      geometry: { type: Cylinder, radius: *RADIUS, height: 5.45 }
+      appearance: *SILVER
+    -
+      <<: *PILLAR20
+      
+PILLAR14: &PILLAR14
+  type: Transform
+  elements:
+    -
+      <<: *PILLAR5
+    -
+      type: Transform
+      translation: [ *INTERVAL5, 0.0, 0.0 ]
+      elements:
+        -
+          <<: *PILLAR5
+        -
+          type: Transform
+          translation: [ *INTERVAL5, 0.0, 0.0 ]
+          elements:
+            -
+              type: Transform
+              translation: [ *INTERVAL, 0.0, *HEIGHTH ]
+              elements:
+                -
+                  <<: *PILLAR_SHAPE
+                - 
+                  type: Transform
+                  translation: [ *INTERVAL, 0.0, 0.0 ]
+                  elements:
+                    -
+                      <<: *PILLAR_SHAPE
+                    - 
+                      type: Transform
+                      translation: [ *INTERVAL, 0.0, 0.0 ]
+                      elements:
+                        -
+                          <<: *PILLAR_SHAPE
+                        - 
+                          type: Transform
+                          translation: [ *INTERVAL, 0.0, 0.0 ]
+                          elements:
+                            -
+                              <<: *PILLAR_SHAPE
+
+HANDRAILS2: &HANDRAILS2
+  type: Transform
+  elements:
+    -
+      type: Shape
+      translation: [ 2.012, 0.0, 0.9 ]
+      rotation: [ 0, 0, 1, 90 ]
+      geometry: { type: Cylinder, radius: *RADIUS, height: 4.027 }
+      appearance: *SILVER
+    -
+      <<: *PILLAR14
+
+PILLAR25: &PILLAR25
+  type: Transform
+  elements:
+    -
+      <<: *PILLAR5
+    -
+      type: Transform
+      translation: [ *INTERVAL5, 0.0, 0.0 ]
+      elements:
+        -
+          <<: *PILLAR5
+        -
+          type: Transform
+          translation: [ *INTERVAL5, 0.0, 0.0 ]
+          elements:
+            -
+              <<: *PILLAR5
+            -
+              type: Transform
+              translation: [ *INTERVAL5, 0.0, 0.0 ]
+              elements:
+                -
+                  <<: *PILLAR5
+                -
+                  type: Transform
+                  translation: [ *INTERVAL5, 0.0, 0.0 ]
+                  elements:
+                    -
+                      <<: *PILLAR5
+                   
+HANDRAILS3: &HANDRAILS3
+  type: Transform
+  elements:
+    -
+      type: Shape
+      translation: [ 3.36, 0.0, 0.9 ]
+      rotation: [ 0, 0, 1, 90 ]
+      geometry: { type: Cylinder, radius: *RADIUS, height: 6.65 }
+      appearance: *SILVER
+    -
+      <<: *PILLAR25
+                   
+PILLAR17: &PILLAR17
+  type: Transform
+  elements:
+    -
+      <<: *PILLAR5
+    -
+      type: Transform
+      translation: [ *INTERVAL5, 0.0, 0.0 ]
+      elements:
+        -
+          <<: *PILLAR5
+        -
+          type: Transform
+          translation: [ *INTERVAL5, 0.0, 0.0 ]
+          elements:
+            -
+              <<: *PILLAR5
+            -
+              type: Transform
+              translation: [ *INTERVAL5, 0.0, 0.0 ]
+              elements:
+                -
+                  type: Transform
+                  translation: [ *INTERVAL, 0.0, *HEIGHTH ]
+                  elements:
+                    -
+                      <<: *PILLAR_SHAPE
+                    - 
+                      type: Transform
+                      translation: [ *INTERVAL, 0.0, 0.0 ]
+                      elements:
+                        -
+                          <<: *PILLAR_SHAPE
+
+HANDRAILS4: &HANDRAILS4
+  type: Transform
+  elements:
+    -
+      type: Shape
+      translation: [ 2.368, 0.0, 0.9 ]
+      rotation: [ 0, 0, 1, 90 ]
+      geometry: { type: Cylinder, radius: *RADIUS, height: 4.658 }
+      appearance: *SILVER
+    -
+      <<: *PILLAR17
+
+HANDRAILS5: &HANDRAILS5
+  type: Transform
+  elements:
+    -
+      type: Shape
+      translation: [ 1.925, 0.0, 0.9 ]
+      rotation: [ 0, 0, 1, 90 ]
+      geometry: { type: Cylinder, radius: *RADIUS, height: 3.854 }
+      appearance: *SILVER
+    -
+      <<: *PILLAR14
+
+HANDRAILS_EXT_LEFT: &HANDRAILS_EXT_LEFT
+  -
+    <<: *HANDRAILS1
+    name: HANDRAIL_EXT_LEFT1
+    translation: [ 0.3156, 0.021, -0.02 ]
+  -
+    <<: *HANDRAILS2
+    name: HANDRAIL_EXT_LEFT2
+    translation: [ 6.1521, 0.025, -0.0175 ]
+
+HANDRAILS_OUT_LEFT: &HANDRAILS_OUT_LEFT
+  -
+    <<: *HANDRAILS1
+    name: HANDRAIL_OUT_LEFT1
+    translation: [ 0.3156, 0.021, -0.02 ]
+  -
+    <<: *HANDRAILS5
+    name: HANDRAIL_OUT_LEFT2
+    translation: [ 6.1521, 0.025, -0.0175 ]
+      
+HANDRAILS_OUT_FRONT: &HANDRAILS_OUT_FRONT
+  -
+    <<: *HANDRAILS3
+    name: HANDRAIL_OUT_FRONT1
+    translation: [ 0.017, 5.317, -0.0188 ]
+    rotation: [ 0, 0, 1, 90 ]
+  -
+    <<: *HANDRAILS4
+    name: HANDRAIL_OUT_FRONT2
+    translation: [ 0.0193, 0.3165, -0.02 ]
+    rotation: [ 0, 0, 1, 90 ]
+   
+HANDRAILS_OUT_FRONT2: &HANDRAILS_OUT_FRONT2
+  -
+    <<: *HANDRAILS3
+    name: HANDRAIL_OUT_FRONT1
+    translation: [ 0.017, 5.26, -0.0188 ]
+    rotation: [ 0, 0, 1, 90 ]
+  -
+    <<: *HANDRAILS4
+    name: HANDRAIL_OUT_FRONT2
+    translation: [ 0.0193, 0.3165, -0.02 ]
+    rotation: [ 0, 0, 1, 90 ]
+
+# inside parts
+INTERVAL2: &INTERVAL2 0.2507
+INTERVAL2_5: &INTERVAL2_5 1.2535
+INTERVAL3: &INTERVAL3 0.266
+INTERVAL3_5: &INTERVAL3_5 1.33
+
+PILLAR5_INTERVAL2: &PILLAR5_INTERVAL2
+  type: Transform
+  translation: [ 0.0, 0.0, *HEIGHTH ]
+  elements:
+    -
+      <<: *PILLAR_SHAPE
+    - 
+      type: Transform
+      translation: [ *INTERVAL2, 0.0, 0.0 ]
+      elements:
+        -
+          <<: *PILLAR_SHAPE
+        - 
+          type: Transform
+          translation: [ *INTERVAL2, 0.0, 0.0 ]
+          elements:
+            -
+              <<: *PILLAR_SHAPE
+            - 
+              type: Transform
+              translation: [ *INTERVAL2, 0.0, 0.0 ]
+              elements:
+                -
+                  <<: *PILLAR_SHAPE
+                - 
+                  type: Transform
+                  translation: [ *INTERVAL2, 0.0, 0.0 ]
+                  elements:
+                      <<: *PILLAR_SHAPE
+                      
+PILLAR38_INTERVAL2: &PILLAR38_INTERVAL2
+  type: Transform
+  elements:
+    -
+      <<: *PILLAR5_INTERVAL2
+    -
+      type: Transform
+      translation: [ *INTERVAL2_5, 0.0, 0.0 ]
+      elements:
+        -
+          <<: *PILLAR5_INTERVAL2
+        -
+          type: Transform
+          translation: [ *INTERVAL2_5, 0.0, 0.0 ]
+          elements:
+            -
+              <<: *PILLAR5_INTERVAL2
+            -
+              type: Transform
+              translation: [ *INTERVAL2_5, 0.0, 0.0 ]
+              elements:
+                -
+                  <<: *PILLAR5_INTERVAL2
+                -
+                  type: Transform
+                  translation: [ *INTERVAL2_5, 0.0, 0.0 ]
+                  elements:
+                    -
+                      <<: *PILLAR5_INTERVAL2
+                    -
+                      type: Transform
+                      translation: [ *INTERVAL2_5, 0.0, 0.0 ]
+                      elements:
+                        -
+                          <<: *PILLAR5_INTERVAL2
+                        -
+                          type: Transform
+                          translation: [ *INTERVAL2_5, 0.0, 0.0 ]
+                          elements:
+                            -
+                              <<: *PILLAR5_INTERVAL2
+                            -
+                              type: Transform
+                              translation: [ *INTERVAL2_5, 0.0, 0.0 ]
+                              elements:
+                                -
+                                  type: Transform
+                                  translation: [ 0.0, 0.0, *HEIGHTH ]
+                                  elements:
+                                    -
+                                      <<: *PILLAR_SHAPE
+                                    - 
+                                      type: Transform
+                                      translation: [ *INTERVAL2, 0.0, 0.0 ]
+                                      elements:
+                                        -
+                                          <<: *PILLAR_SHAPE
+                                        - 
+                                          type: Transform
+                                          translation: [ *INTERVAL2, 0.0, 0.0 ]
+                                          elements:
+                                            -
+                                              <<: *PILLAR_SHAPE
+
+HANDRAILS_IN_FRONT: &HANDRAILS_IN_FRONT
+  type: Transform
+  elements:
+    -
+      type: Shape
+      translation: [ 4.638, 0.0, 0.9 ]
+      rotation: [ 0, 0, 1, 90 ]
+      geometry: { type: Cylinder, radius: *RADIUS, height: 9.31 }
+      appearance: *SILVER
+    -
+      <<: *PILLAR38_INTERVAL2
+
+PILLAR5_INTERVAL3: &PILLAR5_INTERVAL3
+  type: Transform
+  translation: [ 0.0, 0.0, *HEIGHTH ]
+  elements:
+    -
+      <<: *PILLAR_SHAPE
+    - 
+      type: Transform
+      translation: [ *INTERVAL3, 0.0, 0.0 ]
+      elements:
+        -
+          <<: *PILLAR_SHAPE
+        - 
+          type: Transform
+          translation: [ *INTERVAL3, 0.0, 0.0 ]
+          elements:
+            -
+              <<: *PILLAR_SHAPE
+            - 
+              type: Transform
+              translation: [ *INTERVAL3, 0.0, 0.0 ]
+              elements:
+                -
+                  <<: *PILLAR_SHAPE
+                - 
+                  type: Transform
+                  translation: [ *INTERVAL3, 0.0, 0.0 ]
+                  elements:
+                      <<: *PILLAR_SHAPE
+                      
+PILLAR26_INTERVAL3: &PILLAR26_INTERVAL3
+  type: Transform
+  elements:
+    -
+      <<: *PILLAR5_INTERVAL3
+    -
+      type: Transform
+      translation: [ *INTERVAL3_5, 0.0, 0.0 ]
+      elements:
+        -
+          <<: *PILLAR5_INTERVAL3
+        -
+          type: Transform
+          translation: [ *INTERVAL3_5, 0.0, 0.0 ]
+          elements:
+            -
+              <<: *PILLAR5_INTERVAL3
+            -
+              type: Transform
+              translation: [ *INTERVAL3_5, 0.0, 0.0 ]
+              elements:
+                -
+                  <<: *PILLAR5_INTERVAL3
+                -
+                  type: Transform
+                  translation: [ *INTERVAL3_5, 0.0, 0.0 ]
+                  elements:
+                    -
+                      <<: *PILLAR5_INTERVAL3
+                    -
+                      type: Transform
+                      translation: [ *INTERVAL3_5, 0.0, 0.0 ]
+                      elements:
+                        -
+                          type: Transform
+                          translation: [ 0.0, 0.0, *HEIGHTH ]
+                          elements:
+                            -
+                              <<: *PILLAR_SHAPE
+      
+HANDRAILS_IN_LEFT: &HANDRAILS_IN_LEFT
+  type: Transform
+  elements:
+    -
+      type: Shape
+      translation: [ 3.324, -0.0003, 0.9 ]
+      rotation: [ 0, 0, 1, 90 ]
+      geometry: { type: Cylinder, radius: *RADIUS, height: 6.685 }
+      appearance: *SILVER
+    -
+      <<: *PILLAR26_INTERVAL3
+
+PILLAR30: &PILLAR30
+  type: Transform
+  elements:
+    -
+      <<: *PILLAR5
+    -
+      type: Transform
+      translation: [ *INTERVAL5, 0.0, 0.0 ]
+      elements:
+        -
+          <<: *PILLAR5
+        -
+          type: Transform
+          translation: [ *INTERVAL5, 0.0, 0.0 ]
+          elements:
+            -
+              <<: *PILLAR5
+            -
+              type: Transform
+              translation: [ *INTERVAL5, 0.0, 0.0 ]
+              elements:
+                -
+                  <<: *PILLAR5
+                -
+                  type: Transform
+                  translation: [ *INTERVAL5, 0.0, 0.0 ]
+                  elements:
+                    -
+                      <<: *PILLAR5
+                    -
+                      type: Transform
+                      translation: [ *INTERVAL5, 0.0, 0.0 ]
+                      elements:
+                        -
+                          <<: *PILLAR5
+                          
+HANDRAILS_IN_RIGHT: &HANDRAILS_IN_RIGHT
+  type: Transform
+  elements:
+    -
+      type: Shape
+      translation: [ 3.8075, 0.0, 0.9 ]
+      rotation: [ 0, 0, 1, 90 ]
+      geometry: { type: Cylinder, radius: *RADIUS, height: 7.65 }
+      appearance: *SILVER
+    -
+      <<: *PILLAR30
+      translation: [ *MINTERVAL, 0.0, 0.0 ]
+
+PILLAR34_INTERVAL2: &PILLAR34_INTERVAL2
+  type: Transform
+  elements:
+    -
+      <<: *PILLAR5_INTERVAL2
+    -
+      type: Transform
+      translation: [ *INTERVAL2_5, 0.0, 0.0 ]
+      elements:
+        -
+          <<: *PILLAR5_INTERVAL2
+        -
+          type: Transform
+          translation: [ *INTERVAL2_5, 0.0, 0.0 ]
+          elements:
+            -
+              <<: *PILLAR5_INTERVAL2
+            -
+              type: Transform
+              translation: [ *INTERVAL2_5, 0.0, 0.0 ]
+              elements:
+                -
+                  <<: *PILLAR5_INTERVAL2
+                -
+                  type: Transform
+                  translation: [ *INTERVAL2_5, 0.0, 0.0 ]
+                  elements:
+                    -
+                      <<: *PILLAR5_INTERVAL2
+                    -
+                      type: Transform
+                      translation: [ *INTERVAL2_5, 0.0, 0.0 ]
+                      elements:
+                        -
+                          <<: *PILLAR5_INTERVAL2
+                        -
+                          type: Transform
+                          translation: [ *INTERVAL2_5, 0.0, 0.0 ]
+                          elements:
+                            -
+                              type: Transform
+                              translation: [ 0.0, 0.0, *HEIGHTH ]
+                              elements:
+                                -
+                                  <<: *PILLAR_SHAPE
+                                - 
+                                  type: Transform
+                                  translation: [ *INTERVAL2, 0.0, 0.0 ]
+                                  elements:
+                                    -
+                                      <<: *PILLAR_SHAPE
+                                    - 
+                                      type: Transform
+                                      translation: [ *INTERVAL2, 0.0, 0.0 ]
+                                      elements:
+                                        -
+                                          <<: *PILLAR_SHAPE
+                                        - 
+                                          type: Transform
+                                          translation: [ *INTERVAL2, 0.0, 0.0 ]
+                                          elements:
+                                            -
+                                              <<: *PILLAR_SHAPE
+                                             
+HANDRAILS_IN_REAR: &HANDRAILS_IN_REAR
+  type: Transform
+  elements:
+    -
+      type: Shape
+      translation: [ 4.127, 0.0, 0.9 ]
+      rotation: [ 0, 0, 1, 90 ]
+      geometry: { type: Cylinder, radius: *RADIUS, height: 8.33 }
+      appearance: *SILVER
+    -
+      <<: *PILLAR34_INTERVAL2
+
+#stairs
+INTERVAL4: &INTERVAL4 0.25
+STAIRS_INTERVAL_W: &STAIRS_INTERVAL_W 0.441
+STAIRS_INTERVAL_H: &STAIRS_INTERVAL_H 0.452
+STAIRS_PILLAR_HEIGHT: &STAIRS_PILLAR_HEIGHT 1.04
+STAIRS_PILLAR_HEIGHTH: &STAIRS_PILLAR_HEIGHTH 0.515
+
+PILLAR4_INTERVAL4: &PILLAR4_INTERVAL4
+  type: Transform
+  translation: [ 0.0, 0.0, *HEIGHTH ]
+  elements:
+    -
+      <<: *PILLAR_SHAPE
+    - 
+      type: Transform
+      translation: [ *INTERVAL4, 0.0, 0.0 ]
+      elements:
+        -
+          <<: *PILLAR_SHAPE
+        - 
+          type: Transform
+          translation: [ *INTERVAL4, 0.0, 0.0 ]
+          elements:
+            -
+              <<: *PILLAR_SHAPE
+            - 
+              type: Transform
+              translation: [ *INTERVAL4, 0.0, 0.0 ]
+              elements:
+                -
+                  <<: *PILLAR_SHAPE
+
+HANDRAILS_STAIRS_TOP: &HANDRAILS_STAIRS_TOP
+  type: Transform
+  elements:
+    -
+      type: Shape
+      translation: [ 0.38, 0.0, 0.9 ]
+      rotation: [ 0, 0, 1, 90 ]
+      geometry: { type: Cylinder, radius: *RADIUS, height: 0.786 }
+      appearance: *SILVER
+    -
+      <<: *PILLAR4_INTERVAL4
+      
+STAIRS_PILLAR_SHAPE: &STAIRS_PILLAR_SHAPE
+  type: Shape
+  rotation: [ 1, 0, 0, 90 ]
+  geometry: { type: Cylinder, radius: *RADIUS, height: *STAIRS_PILLAR_HEIGHT }
+  appearance: *SILVER
+
+PILLAR6_STAIRS: &PILLAR6_STAIRS
+  type: Transform
+  translation: [ 0.0, 0.0, *STAIRS_PILLAR_HEIGHTH ]
+  elements:
+    -
+      <<: *STAIRS_PILLAR_SHAPE
+    - 
+      type: Transform
+      translation: [ *STAIRS_INTERVAL_W, 0.0, *STAIRS_INTERVAL_H ]
+      elements:
+        -
+          <<: *STAIRS_PILLAR_SHAPE
+        - 
+          type: Transform
+          translation: [ *STAIRS_INTERVAL_W, 0.0, *STAIRS_INTERVAL_H ]
+          elements:
+            -
+              <<: *STAIRS_PILLAR_SHAPE
+            - 
+              type: Transform
+              translation: [ *STAIRS_INTERVAL_W, 0.0, *STAIRS_INTERVAL_H ]
+              elements:
+                -
+                  <<: *STAIRS_PILLAR_SHAPE
+                - 
+                  type: Transform
+                  translation: [ *STAIRS_INTERVAL_W, 0.0, *STAIRS_INTERVAL_H ]
+                  elements:
+                    -
+                      <<: *STAIRS_PILLAR_SHAPE
+                    - 
+                      type: Transform
+                      translation: [ *STAIRS_INTERVAL_W, 0.0, *STAIRS_INTERVAL_H ]
+                      elements:
+                        -
+                          <<: *STAIRS_PILLAR_SHAPE
+
+HANDRAILS_STAIRS: &HANDRAILS_STAIRS
+  type: Transform
+  elements:
+    -
+      type: Shape
+      translation: [ 1.1, 0.0, 2.165 ]
+      rotation: [ [ 0, 0, 1, 90 ], [ 1, 0, 0, -45.87 ] ]
+      geometry: { type: Cylinder, radius: *RADIUS, height: 3.175 }
+      appearance: *SILVER
+    -
+      type: Shape
+      translation: [ 2.223, 0.0, 3.2995 ]
+      rotation: [ 0, 0, 1, 90 ]
+      geometry: { type: Cylinder, radius: *RADIUS, height: 0.06 }
+      appearance: *SILVER
+    -
+      <<: *PILLAR6_STAIRS
+
+INTERVAL6: &INTERVAL6 0.45
+INTERVAL6_5: &INTERVAL6_5 2.25
+
+PILLAR5_INTERVAL6: &PILLAR5_INTERVAL6
+  type: Transform
+  translation: [ 0.0, 0.0, *HEIGHTH ]
+  elements:
+    -
+      <<: *PILLAR_SHAPE
+    - 
+      type: Transform
+      translation: [ *INTERVAL6, 0.0, 0.0 ]
+      elements:
+        -
+          <<: *PILLAR_SHAPE
+        - 
+          type: Transform
+          translation: [ *INTERVAL6, 0.0, 0.0 ]
+          elements:
+            -
+              <<: *PILLAR_SHAPE
+            - 
+              type: Transform
+              translation: [ *INTERVAL6, 0.0, 0.0 ]
+              elements:
+                -
+                  <<: *PILLAR_SHAPE
+                - 
+                  type: Transform
+                  translation: [ *INTERVAL6, 0.0, 0.0 ]
+                  elements:
+                      <<: *PILLAR_SHAPE
+                      
+PILLAR22_INTERVAL6: &PILLAR22_INTERVAL6
+  type: Transform
+  elements:
+    -
+      <<: *PILLAR5_INTERVAL6
+    -
+      type: Transform
+      translation: [ *INTERVAL6_5, 0.0, 0.0 ]
+      elements:
+        -
+          <<: *PILLAR5_INTERVAL6
+        -
+          type: Transform
+          translation: [ *INTERVAL6_5, 0.0, 0.0 ]
+          elements:
+            -
+              <<: *PILLAR5_INTERVAL6
+            -
+              type: Transform
+              translation: [ *INTERVAL6_5, 0.0, 0.0 ]
+              elements:
+                -
+                  <<: *PILLAR5_INTERVAL6
+                -
+                  type: Transform
+                  translation: [ *INTERVAL6_5, 0.0, 0.0 ]
+                  elements:
+                    -
+                      type: Transform
+                      translation: [ 0.0, 0.0, *HEIGHTH ]
+                      elements:
+                        -
+                          <<: *PILLAR_SHAPE
+                        - 
+                          type: Transform
+                          translation: [ *INTERVAL6, 0.0, 0.0 ]
+                          elements:
+                            -
+                              <<: *PILLAR_SHAPE
+
+3F_HANDRAILS_IN_FRONT: &3F_HANDRAILS_IN_FRONT
+  type: Transform
+  elements:
+    -
+      type: Transform
+      translation: [ -0.017, 0.0, 0.9 ]
+      elements:
+        -
+          type: Shape
+          translation: [ 4.7425, 0.0, 0.0 ]
+          rotation: [ 0, 0, 1, 90 ]
+          geometry: { type: Cylinder, radius: *RADIUS, height: 9.485 }
+          appearance: *SILVER
+    -
+      <<: *PILLAR22_INTERVAL6
+
+      

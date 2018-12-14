@@ -1,0 +1,155 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: 2F
+
+COLUMN_S: &COLUMN_S
+  type: Resource
+  uri: "../resource/CommonParts.yaml"
+  node: COLUMN_S
+
+HANDRAILS_RESOURCE: &HANDRAILS_RESOURCE
+  type: Resource
+  uri: "../resource/HandrailParts.yaml"
+
+links:
+  -
+    name: Floor
+    jointType: fixed
+  -
+    name: Floor1
+    parent: Floor
+    jointType: fixed
+    translation: [ 0.0, 0.0, 5.1 ]
+  - 
+    type: SubBody
+    uri: ../1F/Floor.body
+    parent: Floor1
+  - 
+    name: Floor2
+    parent: Floor1
+    jointType: fixed
+    translation: [ 10.175, 0.0, 0.0 ]
+  - 
+    type: SubBody
+    uri: ../1F/ColumnsSub.body
+    parent: Floor2
+  -
+    name: COLUMN1
+    parent: Floor1
+    jointType: fixed
+    translation: [ 0.176, 0.175, 0.4575 ]
+    elements: *COLUMN_S
+  -
+    name: COLUMN2
+    parent: Floor1
+    jointType: fixed
+    translation: [ 5.974, 0.175, 0.4575 ]
+    elements: *COLUMN_S
+  -
+    name: COLUMN6
+    parent: Floor1
+    jointType: fixed
+    translation: [ 0.176, 5.175, 0.4575 ]
+    elements: *COLUMN_S
+  -
+    name: COLUMN9
+    parent: Floor1
+    jointType: fixed
+    translation: [ 0.175, 12.175, 0.4575 ]
+    elements: *COLUMN_S
+  -
+    name: COLUMN10
+    parent: Floor1
+    jointType: fixed
+    translation: [ 5.974, 12.175, 0.4575 ]
+    elements: *COLUMN_S
+  -
+    name: CATWALK
+    parent: Floor2
+    jointType: fixed
+    material: Ground
+    elements:
+      Visual:
+        resource: 
+          translation: [ 0.0, 0, -0.2 ]
+          uri: "resource/Floor2.dae"
+      Collision:
+        resource: { uri: "../resource/CommonParts.yaml", 
+                    node: 2F_CATWALK }
+  -
+    name: STAIRS
+    parent: Floor2
+    jointType: fixed
+    material: Ground
+    translation: [ 8.475, 1.85, -0.2 ]
+    rotation: [ 0, 0, 1, 90 ]
+    elements:
+      Collision:
+        resource: { uri: "../resource/CommonParts.yaml", 
+                    node: 2F_STAIRS }
+  -
+    name: Handrails_ext_left
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Visual:
+        resource: 
+          translation: [ 0, 0, -0.2 ]
+          uri: "resource/Handrails.dae"
+      Collision:
+        elements: 
+          <<: *HANDRAILS_RESOURCE
+          node: HANDRAILS_EXT_LEFT
+  -
+    name: Handrails_ext_front
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          <<: *HANDRAILS_RESOURCE
+          node: HANDRAILS_OUT_FRONT
+  -
+    name: Handrails_ext_right
+    parent: Floor1
+    jointType: fixed
+    translation: [ 0.0, 12.316, 0.0 ]
+    elements:
+      Collision:
+        elements: 
+          <<: *HANDRAILS_RESOURCE
+          node: HANDRAILS_EXT_LEFT
+  - 
+    type: SubBody
+    uri: Handrails_outside.body
+    prefix: 2F_
+    parent: Floor2
+    translation: [ -0.003, -0.004, -0.0025 ]
+  - 
+    type: SubBody #
+    uri: Handrails_outside.body
+    prefix: 2MiddleFloor_
+    parent: Floor2
+    translation: [ -0.003, -0.004, 2.4973 ]
+  - 
+    type: SubBody 
+    uri: Handrails_inside.body
+    parent: Floor2
+    translation: [ -0.003, 0.0, 2.48 ]
+  -
+    name: Handrails_stairs_top
+    parent: Floor2
+    jointType: fixed
+    translation: [ 8.088, 2.337, 2.48 ]
+    elements:
+      Collision:
+        elements: 
+          <<: *HANDRAILS_RESOURCE
+          node: HANDRAILS_STAIRS_TOP
+  - 
+    type: SubBody 
+    uri: Handrails_stairs.body
+    parent: Floor2
+    translation: [ 5.714, 2.335, -0.02 ]
+    

@@ -1,0 +1,52 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: Handrails_outside
+
+HANDRAILS_RESOURCE: &HANDRAILS_RESOURCE
+  type: Resource
+  uri: "../resource/HandrailParts.yaml"
+  
+links:
+  -
+    name: Handrails_out_base
+    jointType: fixed
+  -
+    name: Handrails_out_left
+    parent: Handrails_out_base
+    jointType: fixed
+    elements:
+      Collision:
+        elements: 
+          <<: *HANDRAILS_RESOURCE
+          node: HANDRAILS_OUT_LEFT
+  -
+    name: Handrails_out_front
+    parent: Handrails_out_base
+    jointType: fixed
+    translation: [ 0.161, 0.0044, 0.0024 ]
+    elements:
+      Collision:
+        elements: 
+          <<: *HANDRAILS_RESOURCE
+          node: HANDRAILS_OUT_FRONT
+  -
+    name: Handrails_out_right
+    parent: Handrails_out_base
+    jointType: fixed
+    translation: [ 0.0, 12.316, 0.0 ]
+    elements:
+      Collision:
+        elements: 
+          <<: *HANDRAILS_RESOURCE
+          node: HANDRAILS_OUT_LEFT
+  -
+    name: Handrails_out_rear
+    parent: Handrails_out_base
+    jointType: fixed
+    translation: [ 10.319, 0.0077, 0.0025 ]
+    elements:
+      Collision:
+        elements: 
+          <<: *HANDRAILS_RESOURCE
+          node: HANDRAILS_OUT_FRONT

@@ -1,0 +1,323 @@
+items: 
+  id: 0
+  name: "Root"
+  plugin: Base
+  class: RootItem
+  children: 
+    - 
+      id: 1
+      name: "AizuSpider"
+      plugin: Body
+      class: BodyItem
+      data: 
+        modelFile: "${SHARE}/model/AizuSpider/AizuSpiderSA.body"
+        currentBaseLink: "CHASSIS"
+        rootPosition: [ 11, 8, 0.035 ]
+        rootAttitude: [ 
+          -1, 0, 0, 
+          0, -1, 0, 
+          0, 0, 1 ]
+        jointPositions: [ 
+           0.000000,  0.000000,  0.000000,  0.000000, -1.570796,  0.872665,  0.872665,  0.000000,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
+        initialRootPosition: [ 11, 8, 0.035 ]
+        initialRootAttitude: [ 
+          -1, 0, 0, 
+          0, -1, 0, 
+          0, 0, 1 ]
+        initialJointPositions: [ 
+           0.000000,  0.000000,  0.000000,  0.000000, -1.570796,  0.872665,  0.872665,  0.000000,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
+        zmp: [ 0, 0, 0 ]
+        collisionDetection: true
+        selfCollisionDetection: false
+        isEditable: true
+      children: 
+        - 
+          id: 2
+          name: "AizuSpiderController"
+          plugin: Body
+          class: SimpleControllerItem
+          data: 
+            isNoDelayMode: false
+            controllerOptions: ""
+            controller: "AizuSpiderController.so"
+            baseDirectory: "Controller directory"
+            reloading: true
+          children: 
+            - 
+              id: 3
+              name: "Jaco2Controller"
+              plugin: Body
+              class: SimpleControllerItem
+              data: 
+                isNoDelayMode: false
+                controllerOptions: ""
+                controller: "Jaco2Controller.so"
+                baseDirectory: "Controller directory"
+                reloading: true
+        - 
+          id: 4
+          name: "BodyTrackingCamera"
+          plugin: Body
+          class: BodyTrackingCameraItem
+          data: 
+            keepRelativeAttitude: true
+            nearClipDistance: 0.01
+            farClipDistance: 100
+        - 
+          id: 5
+          name: "LIDAR View"
+          plugin: Body
+          class: BodyTrackingCameraItem
+          data: 
+            keepRelativeAttitude: true
+            cameraType: "Perspective"
+            nearClipDistance: 0.01
+            farClipDistance: 100
+            fieldOfView: 0.785398
+        - 
+          id: 6
+          name: "SensorVisualizer"
+          plugin: Body
+          class: SensorVisualizer
+          data: 
+            subItems: 
+              - 
+                class: RangeSensorVisualizer
+                name: LRF
+                renderingMode: Point
+                pointSize: 2
+                voxelSize: 0.01
+                isEditable: false
+              - 
+                class: CameraImageVisualizer
+                name: FRONT_CAMERA
+              - 
+                class: CameraImageVisualizer
+                name: LEFT_CAMERA
+              - 
+                class: CameraImageVisualizer
+                name: RIGHT_CAMERA
+              - 
+                class: CameraImageVisualizer
+                name: BACK_CAMERA
+              - 
+                class: CameraImageVisualizer
+                name: ARM_CAMERA
+views: 
+  - 
+    id: 1
+    plugin: Base
+    class: ItemTreeView
+    mounted: true
+    state: 
+      checked: [ 1, 3, 4 ]
+      expanded: [ 1, 2, 6 ]
+  - 
+    id: 3
+    plugin: Base
+    class: SceneView
+    mounted: true
+    state: 
+      editMode: false
+      viewpointControlMode: thirdPerson
+      collisionLines: false
+      polygonMode: fill
+      defaultHeadLight: true
+      defaultHeadLightIntensity: 0.75
+      headLightLightingFromBack: false
+      worldLight: true
+      worldLightIntensity: 0.5
+      worldLightAmbient: 0.3
+      additionalLights: true
+      fog: true
+      floorGrid: false
+      floorGridSpan: 10
+      floorGridInterval: 0.5
+      xzGridSpan: 10
+      xzGridInterval: 0.5
+      xzGrid: false
+      yzGridSpan: 10
+      yzGridInterval: 0.5
+      texture: true
+      lineWidth: 1
+      pointSize: 1
+      normalVisualization: false
+      normalLength: 0.01
+      coordinateAxes: true
+      fpsTestIteration: 1
+      showFPS: false
+      enableNewDisplayListDoubleRendering: false
+      useBufferForPicking: true
+      upsideDown: false
+      cameras: 
+        - 
+          camera: [ System, Perspective ]
+          fieldOfView: 0.698132
+          near: 0.01
+          far: 100
+          eye: [ 12.6939048, 8.58763934, 1.02944682 ]
+          direction: [ -0.907400796, -0.289072703, -0.30505863 ]
+          up: [ -0.290665427, -0.0925979358, 0.952333572 ]
+        - 
+          camera: [ System, Orthographic ]
+          orthoHeight: 5.73009
+          near: 0.01
+          far: 100
+        - 
+          camera: BodyTrackingCamera
+          isCurrent: true
+          fieldOfView: 0.785398
+          near: 0.01
+          far: 100
+          eye: [ 12.8772272, 8.81446722, 0.973224766 ]
+          direction: [ -0.89449905, -0.37150806, -0.248703059 ]
+          up: [ -0.229681287, -0.0953924424, 0.968579779 ]
+      backgroundColor: [ 0.100000001, 0.100000001, 0.300000012 ]
+      gridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      xzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      yzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      dedicatedItemTreeViewChecks: false
+  - 
+    id: 4
+    name: "Camera Scene"
+    plugin: Base
+    class: SceneView
+    mounted: true
+    state: 
+      editMode: false
+      viewpointControlMode: thirdPerson
+      collisionLines: false
+      polygonMode: fill
+      defaultHeadLight: true
+      defaultHeadLightIntensity: 0.75
+      headLightLightingFromBack: false
+      worldLight: true
+      worldLightIntensity: 0.5
+      worldLightAmbient: 0.3
+      additionalLights: true
+      fog: true
+      floorGrid: false
+      floorGridSpan: 10
+      floorGridInterval: 0.5
+      xzGridSpan: 10
+      xzGridInterval: 0.5
+      xzGrid: false
+      yzGridSpan: 10
+      yzGridInterval: 0.5
+      texture: true
+      lineWidth: 1
+      pointSize: 1
+      normalVisualization: false
+      normalLength: 0.01
+      coordinateAxes: true
+      fpsTestIteration: 1
+      showFPS: false
+      enableNewDisplayListDoubleRendering: false
+      useBufferForPicking: true
+      upsideDown: false
+      cameras: 
+        - 
+          camera: [ System, Perspective ]
+          fieldOfView: 0.698132
+          near: 0.01
+          far: 100
+          eye: [ 18.6393745, 7.22949869, 1.37028264 ]
+          direction: [ -0.999732815, -0.0136448198, 0.0186579001 ]
+          up: [ 0.0186561625, 0.000254628014, 0.999825926 ]
+        - 
+          camera: [ System, Orthographic ]
+          orthoHeight: 20
+          near: 0.01
+          far: 100
+        - 
+          camera: [ AizuSpider, FRONT_CAMERA ]
+          isCurrent: true
+        - 
+          camera: BodyTrackingCamera (Perspective)
+          fieldOfView: 0.785398
+          near: 0.01
+          far: 100
+          eye: [ 12.7495833, 8.9576644, 1.12241147 ]
+          direction: [ -0.870518418, -0.392564412, -0.296801056 ]
+          up: [ -0.270562513, -0.122011449, 0.954939335 ]
+        - 
+          camera: BodyTrackingCamera (Orthographic)
+          orthoHeight: 2
+          near: 0.01
+          far: 100
+      backgroundColor: [ 0.100000001, 0.100000001, 0.300000012 ]
+      gridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      xzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      yzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      dedicatedItemTreeViewChecks: false
+  - 
+    id: 5
+    name: "LIDAR"
+    plugin: Base
+    class: SceneView
+    mounted: true
+    state: 
+      editMode: false
+      viewpointControlMode: thirdPerson
+      collisionLines: false
+      polygonMode: fill
+      defaultHeadLight: true
+      defaultHeadLightIntensity: 0.75
+      headLightLightingFromBack: false
+      worldLight: false
+      worldLightIntensity: 0.5
+      worldLightAmbient: 0.3
+      additionalLights: false
+      fog: true
+      floorGrid: false
+      floorGridSpan: 10
+      floorGridInterval: 0.5
+      xzGridSpan: 10
+      xzGridInterval: 0.5
+      xzGrid: false
+      yzGridSpan: 10
+      yzGridInterval: 0.5
+      texture: true
+      lineWidth: 1
+      pointSize: 1
+      normalVisualization: false
+      normalLength: 0.01
+      coordinateAxes: true
+      fpsTestIteration: 1
+      showFPS: false
+      enableNewDisplayListDoubleRendering: false
+      useBufferForPicking: true
+      upsideDown: false
+      cameras: 
+        - 
+          camera: [ System, Perspective ]
+          fieldOfView: 0.698132
+          near: 0.01
+          far: 100
+          eye: [ 12.9240618, 8.05056213, 1.57204953 ]
+          direction: [ -0.876938861, 5.36970184e-17, -0.48060195 ]
+          up: [ -0.48060195, 2.9428382e-17, 0.876938861 ]
+        - 
+          camera: [ System, Orthographic ]
+          orthoHeight: 20
+          near: 0.01
+          far: 100
+        - 
+          camera: LIDAR View
+          isCurrent: true
+          fieldOfView: 0.785398
+          near: 0.01
+          far: 100
+          eye: [ 13.0197382, 8.02702158, 2.24801515 ]
+          direction: [ -0.857708687, 5.25195099e-17, -0.514135981 ]
+          up: [ -0.514135981, 3.14817492e-17, 0.857708687 ]
+      backgroundColor: [ 0.100000001, 0.100000001, 0.300000012 ]
+      gridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      xzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      yzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      dedicatedItemTreeViewChecks: true
+      checked: [ 1, 5, [ 6, "LRF" ] ]

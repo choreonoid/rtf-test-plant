@@ -1,0 +1,326 @@
+MASS: &MASS
+  mass: 200.0
+  inertia: [
+    1.0, 0.0, 0.0,
+    0.0, 1.0, 0.0,
+    0.0, 0.0, 1.0 ]
+  centerOfMass: [ 0.0, 0.0, 0.0 ]
+
+COLUMN_L: &COLUMN_L # 1F_pillar.dae
+  RigidBody:
+    <<: *MASS
+    elements: 
+      type: Shape
+      geometry: { type: Box, size: [ 0.348, 0.35, 5.0 ] }
+      appearance: &COLUMN_APP
+        material:
+          diffuseColor: [ 0.56, 0.56, 0.56 ]
+          specularColor: [ 0.56, 0.56, 0.56 ]
+          shininess: 0.15
+            
+
+COLUMN_S: &COLUMN_S
+  RigidBody:
+    <<: *MASS
+    elements:
+      Shape: { geometry: { type: Box, size: [ 0.348, 0.35, 0.915 ] },
+               appearance: *COLUMN_APP }
+
+2F_CATWALK: &2F_CATWALK
+  -
+    type: Shape
+    translation: [ 0.675, 6.005, 2.43 ]
+    geometry: { type: Box, size: [ 1.35, 9.31, 0.1 ] }
+  -
+    type: Shape
+    translation: [ 9.675, 6.005, 2.43 ]
+    geometry: { type: Box, size: [ 1.35, 9.31, 0.1 ] }
+  -
+    type: Shape
+    translation: [ 5.175, 0.675, 2.43 ]
+    geometry: { type: Box, size: [ 10.35, 1.35, 0.1 ] }
+  -
+    type: Shape
+    translation: [ 5.175, 11.505, 2.43 ]
+    geometry: { type: Box, size: [ 10.35, 1.69, 0.1 ] }
+
+3F_CATWALK: &3F_CATWALK
+  -
+    type: Shape
+    translation: [ 0.525, 5.855, -0.05 ]
+    geometry: { type: Box, size: [ 1.05, 9.61, 0.1 ] }
+  -
+    type: Shape
+    translation: [ 9.825, 5.855, -0.05 ]
+    geometry: { type: Box, size: [ 1.05, 9.61, 0.1 ] }
+  -
+    type: Shape
+    translation: [ 5.175, 0.525, -0.05 ]
+    geometry: { type: Box, size: [ 10.35, 1.05, 0.1 ] }
+  -
+    type: Shape
+    translation: [ 5.175, 11.505, -0.05 ]
+    geometry: { type: Box, size: [ 10.35, 1.69, 0.1 ] }
+
+CHIMNEY_CATWALK: &CHIMNEY_CATWALK
+  -
+    type: Shape
+    translation: [ 0.525, 6.1, -0.05 ]
+    geometry: { type: Box, size: [ 1.05, 10.1, 0.1 ] }
+  -
+    type: Shape
+    translation: [ 9.825, 6.1, -0.05 ]
+    geometry: { type: Box, size: [ 1.05, 10.1, 0.1 ] }
+  -
+    type: Shape
+    translation: [ 5.175, 0.525, -0.05 ]
+    geometry: { type: Box, size: [ 10.35, 1.05, 0.1 ] }
+  -
+    type: Shape
+    translation: [ 5.175, 11.75, -0.05 ]
+    geometry: { type: Box, size: [ 10.35, 1.2, 0.1 ] }
+    
+STAIRS: &STAIRS
+  -
+    type: Shape
+    name: STAIRS_TOP
+    translation: [ 0.0, 1.875, 2.5825 ]
+    geometry: { type: Box, size: [ 1.0, 1.05, 0.195 ] }
+  -
+    type: Shape
+    name: STAIRS1
+    translation: [ 0.0, 2.515, 2.3915 ]
+    geometry: &STEP
+      { type: Box, size: [ 1.0, 0.23, 0.193 ] }
+  -
+    type: Shape
+    name: STAIRS2
+    translation: [ 0.0, 2.745, 2.198 ]
+    geometry: *STEP
+  -
+    type: Shape
+    name: STAIRS3
+    translation: [ 0.0, 2.975, 2.007 ]
+    geometry: *STEP
+  -
+    type: Shape
+    name: STAIRS4
+    translation: [ 0.0, 3.205, 1.8145 ]
+    geometry: *STEP
+  -
+    type: Shape
+    name: STAIRS5
+    translation: [ 0.0, 3.435, 1.6225 ]
+    geometry: *STEP
+  -
+    type: Shape
+    name: STAIRS6
+    translation: [ 0.0, 3.665, 1.4305 ]
+    geometry: *STEP
+  -
+    type: Shape
+    name: STAIRS7
+    translation: [ 0.0, 3.895, 1.2385 ]
+    geometry: *STEP
+  -
+    type: Shape
+    name: STAIRS8
+    translation: [ 0.0, 4.125, 1.046 ]
+    geometry: *STEP
+  -
+    type: Shape
+    name: STAIRS9
+    translation: [ 0.0, 4.355, 0.854 ]
+    geometry: *STEP
+  -
+    type: Shape
+    name: STAIRS10
+    translation: [ 0.0, 4.585, 0.6615 ]
+    geometry: *STEP
+  -
+    type: Shape
+    name: STAIRS11
+    translation: [ 0.0, 4.815, 0.469 ]
+    geometry: *STEP
+  -
+    type: Shape
+    name: STAIRS12
+    translation: [ 0.0, 5.045, 0.2765 ]
+    geometry: *STEP
+  -
+    type: Shape
+    name: STAIRS13
+    translation: [ 0.0, 3.617, 1.375 ]
+    rotation: [ 1, 0, 0, -39.9 ]
+    geometry: { type: Box, size: [ 1.0, 3.9, 0.145 ]  }
+  -
+    type: Shape
+    name: STAIRS14
+    translation: [ 0.0, 5.15, 0.09 ]
+    geometry: { type: Box, size: [ 1.0, 0.02, 0.18 ] }
+  -
+    type: Shape
+    name: STAIRS15
+    translation: [ 0.0, 5.101, 0.053 ]
+    rotation: [ 1, 0, 0, -39.9 ]
+    geometry: { type: Box, size: [ 1.0, 0.15, 0.02 ]  }
+  -
+    type: Shape
+    name: STAIRS16
+    translation: [ 0.0, 5.111, 0.12 ]
+    rotation: [ 1, 0, 0, 10 ]
+    geometry: { type: Box, size: [ 1.0, 0.072, 0.13 ]  }
+  -
+    type: Shape
+    name: STAIRS17
+    translation: [ 0.0, 5.13, 0.045 ]
+    geometry: { type: Box, size: [ 1.0, 0.03, 0.03 ]  }
+  -
+    type: Shape
+    name: STAIRS_BOTTOM
+    translation: [ 0.0, 5.675, 0.0085 ]
+    geometry: { type: Box, size: [ 1.0, 1.07, 0.017 ] }
+    
+2F_STAIRS: &2F_STAIRS
+  -
+    type: Transform
+    name: STAIRS_TOP
+    translation: [ 0.0, 0.0, 2.59 ]
+    elements:
+    -
+      type: Shape
+      geometry: { type: Box, size: [ 1.0, 1.05, 0.18 ] }
+    -
+      type: Shape
+      translation: [ 0.0, 0.475, -0.12 ]
+      geometry: { type: Box, size: [ 1.0, 0.1, 0.06 ] }
+  -
+    type: Transform
+    name: STAIRS1
+    translation: [ 0.0, 0.625, 2.3777 ]
+    elements: &2F_STEP
+      -
+        type: Shape
+        geometry: { type: Box, size: [ 1.0, 0.24, 0.15 ] }
+      -
+        type: Shape
+        translation: [ 0.0, 0.04, -0.115 ]
+        geometry: { type: Box, size: [ 1.0, 0.16, 0.08 ] }
+  -
+    type: Transform
+    name: STAIRS2
+    translation: [ 0.0, 0.845, 2.1504 ]
+    elements: *2F_STEP
+  -
+    type: Transform
+    name: STAIRS3
+    translation: [ 0.0, 1.065, 1.9231 ]
+    elements: *2F_STEP
+  -
+    type: Transform
+    name: STAIRS4
+    translation: [ 0.0, 1.285, 1.6958 ]
+    elements: *2F_STEP
+  -
+    type: Transform
+    name: STAIRS5
+    translation: [ 0.0, 1.505, 1.4685 ]
+    elements: *2F_STEP
+  -
+    type: Transform
+    name: STAIRS6
+    translation: [ 0.0, 1.725, 1.2412 ]
+    elements: *2F_STEP
+  -
+    type: Transform
+    name: STAIRS7
+    translation: [ 0.0, 1.945, 1.0139 ]
+    elements: *2F_STEP
+  -
+    type: Transform
+    name: STAIRS8
+    translation: [ 0.0, 2.165, 0.7866 ]
+    elements: *2F_STEP
+  -
+    type: Transform
+    name: STAIRS9
+    translation: [ 0.0, 2.385, 0.5593 ]
+    elements: *2F_STEP
+  -
+    type: Transform
+    name: STAIRS10
+    translation: [ 0.0, 2.605, 0.332 ]
+    elements: *2F_STEP
+  -
+    type: Shape
+    name: STAIRS13
+    translation: [ 0.0, 1.475, 1.375 ]
+    rotation: [ 1, 0, 0, -45.95 ]
+    geometry: { type: Box, size: [ 1.0, 3.25, 0.115 ]  }
+  -
+    type: Transform
+    name: STAIRS14
+    translation: [ 0.0, 2.718, 0.1 ]
+    elements:
+      -
+        type: Shape
+        geometry: &STAIRS14_SHAPE
+          { type: Box, size: [ 1.0, 0.014, 0.17 ] }
+      -
+        type: Shape
+        translation: [ 0.0, -0.014, 0.015 ]
+        geometry: *STAIRS14_SHAPE
+      -
+        type: Shape
+        translation: [ 0.0, -0.028, 0.03 ]
+        geometry: *STAIRS14_SHAPE
+      -
+        type: Shape
+        translation: [ 0.0, -0.042, 0.045 ]
+        geometry: *STAIRS14_SHAPE
+      -
+        type: Shape
+        translation: [ 0.0, -0.056, 0.06 ]
+        geometry: *STAIRS14_SHAPE
+      -
+        type: Shape
+        translation: [ 0.0, -0.07, 0.075 ]
+        geometry: *STAIRS14_SHAPE
+      -
+        type: Shape
+        translation: [ 0.0, -0.084, 0.09 ]
+        geometry: *STAIRS14_SHAPE
+      -
+        type: Shape
+        translation: [ 0.0, -0.098, 0.104 ]
+        geometry: *STAIRS14_SHAPE
+      -
+        type: Shape
+        translation: [ 0.0, -0.112, 0.119 ]
+        geometry: *STAIRS14_SHAPE
+      -
+        type: Shape
+        translation: [ 0.0, -0.126, 0.134 ]
+        geometry: *STAIRS14_SHAPE
+      -
+        type: Shape
+        translation: [ 0.0, -0.14, 0.148 ]
+        geometry: *STAIRS14_SHAPE
+  -
+    type: Shape
+    name: STAIRS15
+    translation: [ 0.0, 2.645, 0.092 ]
+    rotation: [ 1, 0, 0, -45.95 ]
+    geometry: { type: Box, size: [ 1.0, 0.243, 0.013 ]  }
+  -
+    type: Shape
+    name: STAIRS_BOTTOM
+    translation: [ 0.0, 3.25, 0.01 ]
+    geometry: { type: Box, size: [ 1.0, 1.05, 0.02 ] }
+    
+3F_FLOOR: &3F_FLOOR
+  -
+    type: Shape
+    translation: [ 5.175, 6.175, -0.05 ]
+    geometry: { type: Box, size: [ 10.35, 12.35, 0.1 ] }
+    

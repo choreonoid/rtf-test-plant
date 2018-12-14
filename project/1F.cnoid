@@ -1,0 +1,982 @@
+items: 
+  id: 0
+  name: "Root"
+  plugin: Base
+  class: RootItem
+  children: 
+    - 
+      id: 1
+      name: "World"
+      plugin: Body
+      class: WorldItem
+      data: 
+        collisionDetection: false
+        collisionDetector: AISTCollisionDetector
+        materialTableFile: "${SHARE}/default/materials.yaml"
+      children: 
+        - 
+          id: 2
+          name: "1F"
+          plugin: Base
+          class: FolderItem
+          children: 
+            - 
+              id: 3
+              name: "Floor"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/Floor.body"
+                currentBaseLink: "1F_SURFACE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 4
+              name: "Columns"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/Columns.body"
+                currentBaseLink: "COLUMN1"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 5
+              name: "Catwalk"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/Catwalk.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 6
+              name: "Handrails"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/Handrails.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 7
+              name: "Ramp.body"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/Ramp.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, -0.015 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, -0.015 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 8
+              name: "Platform"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/Platform.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 9
+              name: "SteelPlae"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/SteelPlate.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 10
+              name: "Grating"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/Grating.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 11
+              name: "PipeL"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/PipeL.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 12
+              name: "ButtonBox"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/ButtonBox.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 13
+              name: "SwitchBoard"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/SwitchBoard.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 14
+              name: "TankA"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/TankA.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 15
+              name: "TankPlatformStage"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/TankPlatformStage.body"
+                currentBaseLink: "STAGE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 16
+              name: "TankPlatformStageHandrail"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/TankPlatformStageHandrails.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 17
+              name: "TankPlatformStairs1"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/TankPlatformStairs.body"
+                currentBaseLink: "STAIRS"
+                rootPosition: [ 4.06, 4.7455, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 4.06, 4.7455, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 18
+              name: "TankPlatformStairs1Handrails"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/TankPlatformStairsHandrails.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 4.06, 4.7455, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 4.06, 4.7455, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 19
+              name: "TankPlatformStairs2"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/TankPlatformStairs.body"
+                currentBaseLink: "STAIRS"
+                rootPosition: [ 7.061, 7.03, 0 ]
+                rootAttitude: [ 
+                  -1, -1.2246468e-16, 0, 
+                  1.2246468e-16, -1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 7.061, 7.03, 0 ]
+                initialRootAttitude: [ 
+                  -1, -1.2246468e-16, 0, 
+                  1.2246468e-16, -1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 20
+              name: "TankPlatformStairs2Handrails"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/TankPlatformStairsHandrails.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 7.061, 7.03, 0 ]
+                rootAttitude: [ 
+                  -1, -1.2246468e-16, 0, 
+                  1.2246468e-16, -1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 7.061, 7.03, 0 ]
+                initialRootAttitude: [ 
+                  -1, -1.2246468e-16, 0, 
+                  1.2246468e-16, -1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 21
+              name: "PipeG"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/PipeG.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 22
+              name: "PipeB"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/PipeB.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 23
+              name: "FireHydrant"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/FireHydrant.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 24
+              name: "TankB"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/TankB.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0.03, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0.03, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 25
+              name: "Pump"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/Pump.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 26
+              name: "PipeP1"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/PipeP1.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0.4, 2.69, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0.4, 2.69, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 27
+              name: "PipeP2"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/PipeP2.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0.41, 1.7, -0.16 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0.41, 1.7, -0.16 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 28
+              name: "PipePS"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/PipePS.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0.04, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0.04, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 29
+              name: "PipeY"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/PipeY.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 30
+              name: "PipeBG1"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/PipeBG1.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 31
+              name: "PipeBG2"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/PipeBG2.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 8.23, 10.445, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  0.000000,  0.000000 ]
+                initialRootPosition: [ 8.23, 10.445, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                initialJointPositions: [  0.000000,  0.000000 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: true
+            - 
+              id: 32
+              name: "PipeBG3"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/PipeBG3.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: false
+            - 
+              id: 33
+              name: "Door"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/TestPlant/1F/Door.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 0, 0, 0 ]
+                rootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  0.000000 ]
+                initialRootPosition: [ 0, 0, 0 ]
+                initialRootAttitude: [ 
+                  1, 0, 0, 
+                  0, 1, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: true
+        - 
+          id: 34
+          name: "Debris"
+          plugin: Base
+          class: FolderItem
+          children: 
+            - 
+              id: 35
+              name: "Debris-S"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/WRS2018/DebrisS.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 14.0423041, 7.69355488, 0.02 ]
+                rootAttitude: [ 
+                  0.899024123, -0.437899104, 0, 
+                  0.437899104, 0.899024123, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 14.0423041, 7.69355488, 0.02 ]
+                initialRootAttitude: [ 
+                  0.899024124, -0.437899104, 0, 
+                  0.437899104, 0.899024124, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: true
+            - 
+              id: 36
+              name: "Debris-S"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/WRS2018/DebrisS.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 14.8188889, 6.9035799, 0.02 ]
+                rootAttitude: [ 
+                  0.409424703, 0.912343912, 0, 
+                  -0.912343912, 0.409424703, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 14.8188889, 6.9035799, 0.02 ]
+                initialRootAttitude: [ 
+                  0.409424702, 0.912343912, 0, 
+                  -0.912343912, 0.409424702, -0, 
+                  -0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: true
+            - 
+              id: 37
+              name: "Debris-S"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/WRS2018/DebrisS.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 14.963608, 7.89425706, 0.02 ]
+                rootAttitude: [ 
+                  0.0406615509, 0.999172977, 0, 
+                  -0.999172977, 0.0406615509, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 14.963608, 7.89425706, 0.02 ]
+                initialRootAttitude: [ 
+                  0.0406615512, 0.999172977, 0, 
+                  -0.999172977, 0.0406615512, -0, 
+                  -0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: true
+            - 
+              id: 38
+              name: "Debris-S"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/WRS2018/DebrisS.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 14.3175065, 7.5, 0.02 ]
+                rootAttitude: [ 
+                  0.793590095, -0.608452759, 0, 
+                  0.608452759, 0.793590095, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 14.3175065, 7.5, 0.02 ]
+                initialRootAttitude: [ 
+                  0.793590096, -0.608452759, 0, 
+                  0.608452759, 0.793590096, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: true
+            - 
+              id: 39
+              name: "Debris-S"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/WRS2018/DebrisS.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 15, 8.62395386, 0.02 ]
+                rootAttitude: [ 
+                  0.95673993, 0.290944509, 0, 
+                  -0.290944509, 0.95673993, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 15, 8.62395386, 0.02 ]
+                initialRootAttitude: [ 
+                  0.95673993, 0.290944509, 0, 
+                  -0.290944509, 0.95673993, -0, 
+                  -0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: true
+            - 
+              id: 40
+              name: "Debris-S"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/WRS2018/DebrisS.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 14.0330233, 8.95903614, 0.02 ]
+                rootAttitude: [ 
+                  0.428845058, -0.903378059, 0, 
+                  0.903378059, 0.428845058, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 14.0330233, 8.95903614, 0.02 ]
+                initialRootAttitude: [ 
+                  0.428845057, -0.903378059, 0, 
+                  0.903378059, 0.428845057, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: true
+            - 
+              id: 41
+              name: "Debris-S"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/WRS2018/DebrisS.body"
+                currentBaseLink: "BASE"
+                rootPosition: [ 14.6978553, 9.2857273, 0.02 ]
+                rootAttitude: [ 
+                  0.687091691, -0.726570718, 0, 
+                  0.726570718, 0.687091691, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 14.6978553, 9.2857273, 0.02 ]
+                initialRootAttitude: [ 
+                  0.687091691, -0.726570718, 0, 
+                  0.726570718, 0.687091691, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: true
+            - 
+              id: 42
+              name: "Debris-L"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/WRS2018/DebrisL.body"
+                currentBaseLink: "body"
+                rootPosition: [ 12.0578928, 5.97264844, 0.25 ]
+                rootAttitude: [ 
+                  0.817488397, 0, 0.575945068, 
+                  0.575945068, 6.123234e-17, -0.817488397, 
+                  -3.52664642e-17, 1, 5.00567274e-17 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 12.0578928, 5.97264844, 0.25 ]
+                initialRootAttitude: [ 
+                  0.817488397, 5.55111512e-17, 0.575945068, 
+                  0.575945068, -1.60428781e-10, -0.817488397, 
+                  5.55111512e-17, 1, -1.60428781e-10 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: true
+            - 
+              id: 43
+              name: "Debris-L"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/WRS2018/DebrisL.body"
+                currentBaseLink: "body"
+                rootPosition: [ 17.0132031, 9.94667957, 0.25 ]
+                rootAttitude: [ 
+                  0.726870479, -0.686774567, 0, 
+                  0.686774567, 0.726870479, 0, 
+                  0, 0, 1 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 17.0132031, 9.94667957, 0.25 ]
+                initialRootAttitude: [ 
+                  0.72687048, -0.686774567, 0, 
+                  0.686774567, 0.72687048, 0, 
+                  0, 0, 1 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: true
+            - 
+              id: 44
+              name: "Debris-L"
+              plugin: Body
+              class: BodyItem
+              data: 
+                modelFile: "${SHARE}/model/WRS2018/DebrisL.body"
+                currentBaseLink: "body"
+                rootPosition: [ 17, 6.64132296, 0.25 ]
+                rootAttitude: [ 
+                  0.825809354, 6.16297582e-33, -0.563949387, 
+                  0.563949387, 6.123234e-17, 0.825809354, 
+                  3.45319406e-17, -1, 5.05662391e-17 ]
+                jointPositions: [  ]
+                initialRootPosition: [ 17, 6.64132296, 0.25 ]
+                initialRootAttitude: [ 
+                  0.825809354, 5.55111512e-17, -0.563949387, 
+                  0.563949387, -6.88937796e-11, 0.825809354, 
+                  -5.55111512e-17, -1, -6.88937796e-11 ]
+                zmp: [ 0, 0, 0 ]
+                collisionDetection: true
+                selfCollisionDetection: false
+                isEditable: true
+views: 
+  - 
+    id: 1
+    plugin: Base
+    class: ItemTreeView
+    mounted: true
+    state: 
+      selected: [ 33 ]
+      checked: [ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44 ]
+      expanded: [ 1, 13, 26, 29 ]

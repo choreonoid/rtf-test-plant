@@ -1,0 +1,33 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: Handrails_inside
+
+HANDRAILS_RESOURCE: &HANDRAILS_RESOURCE
+  type: Resource
+  uri: "../resource/HandrailParts.yaml"
+  
+links:
+  -
+    name: Handrails_stairs_base
+    jointType: fixed
+  - 
+    name: Handrails_stairs_right
+    parent: Handrails_stairs_base
+    jointType: fixed
+    translation: [ 0.0, 0.0, 0.0 ]
+    elements:
+      Collision:
+        elements: 
+          <<: *HANDRAILS_RESOURCE
+          node: HANDRAILS_STAIRS
+  - 
+    name: Handrails_stairs_left
+    parent: Handrails_stairs_base
+    jointType: fixed
+    translation: [ 0.01, -0.96, 0.0 ]
+    elements:
+      Collision:
+        elements: 
+          <<: *HANDRAILS_RESOURCE
+          node: HANDRAILS_STAIRS

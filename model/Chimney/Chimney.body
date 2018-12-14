@@ -1,0 +1,1313 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: Chimney
+
+HANDRAILS_RESOURCE: &HANDRAILS_RESOURCE
+  type: Resource
+  uri: "../resource/HandrailParts.yaml"
+
+CHIMNEY1_L: &CHIMNEY1_L 0.3916
+CHIMNEY1_L2: &CHIMNEY1_L2 0.1958  # 0.3916/2
+CHIMNEY1_R: &CHIMNEY1_R 1.5
+CHIMNEY2_L: &CHIMNEY2_L 0.2611
+CHIMNEY2_L2: &CHIMNEY2_L2 0.13055
+CHIMNEY2_R: &CHIMNEY2_R 1.0
+CHIMNEY2_L: &CHIMNEY3_L 0.1305
+CHIMNEY2_L2: &CHIMNEY3_L2 0.06525
+CHIMNEY2_R: &CHIMNEY3_R 0.5
+
+LADDER1_BAR_INTERVAL: &LADDER1_BAR_INTERVAL 0.35
+LADDER1_BAR_INTERVAL6: &LADDER1_BAR_INTERVAL6 2.1 # 0.35*6
+LADDER1_BAR_INTERVAL18: &LADDER1_BAR_INTERVAL18 6.3 # 2.1*3
+LADDER1_BAR6: &LADDER1_BAR6
+  type: Transform
+  elements:
+    - &LADDER1_BAR_SHAPE
+      type: Shape
+      geometry: 
+        { type: Cylinder, radius: 0.0126, height: 0.4  }
+    -
+      type: Transform
+      translation: [ 0.0, 0.0, *LADDER1_BAR_INTERVAL ]
+      elements:
+        -
+          *LADDER1_BAR_SHAPE
+        -
+          type: Transform
+          translation: [ 0.0, 0.0, *LADDER1_BAR_INTERVAL ]
+          elements:
+            -
+              *LADDER1_BAR_SHAPE
+            -
+              type: Transform
+              translation: [ 0.0, 0.0, *LADDER1_BAR_INTERVAL ]
+              elements:
+                -
+                  *LADDER1_BAR_SHAPE
+                -
+                  type: Transform
+                  translation: [ 0.0, 0.0, *LADDER1_BAR_INTERVAL ]
+                  elements:
+                    -
+                      *LADDER1_BAR_SHAPE
+                    -
+                      type: Transform
+                      translation: [ 0.0, 0.0, *LADDER1_BAR_INTERVAL ]
+                      elements:
+                        -
+                          *LADDER1_BAR_SHAPE
+LADDER1_BAR18: &LADDER1_BAR18
+  type: Transform
+  elements:
+    - 
+      <<: *LADDER1_BAR6
+    -
+      type: Transform
+      translation: [ 0.0, 0.0, *LADDER1_BAR_INTERVAL6 ]
+      elements:
+        -
+          <<: *LADDER1_BAR6
+        -
+          type: Transform
+          translation: [ 0.0, 0.0, *LADDER1_BAR_INTERVAL6 ]
+          elements:
+            -
+              <<: *LADDER1_BAR6
+
+LADDER1_FENCE_SHAPE1_L: &LADDER1_FENCE_SHAPE1_L 0.0929
+LADDER1_FENCE_SHAPE1_L1: &LADDER1_FENCE_SHAPE1_L1 -0.0929  
+LADDER1_FENCE_SHAPE1_L2: &LADDER1_FENCE_SHAPE1_L2 -0.04645  #0.0929/2
+LADDER1_FENCE_BAR_INTERVAL: &LADDER1_FENCE_BAR_INTERVAL 0.7
+LADDER1_FENCE_BAR_INTERVAL4: &LADDER1_FENCE_BAR_INTERVAL4 2.8 #0.7*4
+
+LADDER1_FENCE_BAR_R: &LADDER_FENCE_BAR_R
+  type: Transform
+  rotation: [ 0, 0, 1, 7.5 ]
+  elements:
+    - &LADDER1_FENCE_BAR_SHAPE1
+      type: Shape
+      translation: [ *LADDER1_FENCE_SHAPE1_L2, -0.003, 0.0 ]
+      geometry: { type: Box, size: [ *LADDER1_FENCE_SHAPE1_L, 0.006, 0.05 ] }
+    -
+      type: Transform
+      translation: [ *LADDER1_FENCE_SHAPE1_L1, 0.0, 0.0 ]
+      rotation: [ 0, 0, 1, 15 ]
+      elements: 
+        -
+          *LADDER1_FENCE_BAR_SHAPE1
+        -
+          type: Transform
+          translation: [ *LADDER1_FENCE_SHAPE1_L1, 0.0, 0.0 ]
+          rotation: [ 0, 0, 1, 15 ]
+          elements: 
+            -
+              *LADDER1_FENCE_BAR_SHAPE1
+            -
+              type: Transform
+              translation: [ *LADDER1_FENCE_SHAPE1_L1, 0.0, 0.0 ]
+              rotation: [ 0, 0, 1, 15 ]
+              elements: 
+                -
+                  *LADDER1_FENCE_BAR_SHAPE1
+                -
+                  type: Transform
+                  translation: [ *LADDER1_FENCE_SHAPE1_L1, 0.0, 0.0 ]
+                  rotation: [ 0, 0, 1, 15 ]
+                  elements: 
+                    -
+                      *LADDER1_FENCE_BAR_SHAPE1
+                    -
+                      type: Transform
+                      translation: [ *LADDER1_FENCE_SHAPE1_L1, 0.0, 0.0 ]
+                      rotation: [ 0, 0, 1, 15 ]
+                      elements: 
+                        -
+                          *LADDER1_FENCE_BAR_SHAPE1
+                        -
+                          type: Transform
+                          translation: [ *LADDER1_FENCE_SHAPE1_L1, 0.0, 0.0 ]
+                          rotation: [ 0, 0, 1, 15 ]
+                          elements: 
+                            -
+                              *LADDER1_FENCE_BAR_SHAPE1
+                            -
+                          type: Transform
+                          translation: [ *LADDER1_FENCE_SHAPE1_L1, 0.0, 0.0 ]
+                          rotation: [ 0, 0, 1, 15 ]
+                          elements: 
+                            -
+                              *LADDER1_FENCE_BAR_SHAPE1
+                            -
+                              type: Transform
+                              translation: [ *LADDER1_FENCE_SHAPE1_L1, 0.0, 0.0 ]
+                              rotation: [ 0, 0, 1, 15 ]
+                              elements: 
+                                -
+                                  *LADDER1_FENCE_BAR_SHAPE1
+                                -
+                                  type: Transform
+                                  translation: [ *LADDER1_FENCE_SHAPE1_L1, 0.0, 0.0 ]
+                                  rotation: [ 0, 0, 1, 15 ]
+                                  elements: 
+                                    -
+                                      *LADDER1_FENCE_BAR_SHAPE1
+                                    -
+                                      type: Transform
+                                      translation: [ *LADDER1_FENCE_SHAPE1_L1, 0.0, 0.0 ]
+                                      rotation: [ 0, 0, 1, 15 ]
+                                      elements: 
+                                        -
+                                          *LADDER1_FENCE_BAR_SHAPE1
+                                        -
+                                          type: Transform
+                                          translation: [ *LADDER1_FENCE_SHAPE1_L1, 0.0, 0.0 ]
+                                          rotation: [ 0, 0, 1, 15 ]
+                                          elements: 
+                                            -
+                                              *LADDER1_FENCE_BAR_SHAPE1
+                                            -
+                                              type: Transform
+                                              translation: [ *LADDER1_FENCE_SHAPE1_L1, 0.0, 0.0 ]
+                                              rotation: [ 0, 0, 1, 15 ]
+                                              elements: 
+                                                -
+                                                  *LADDER1_FENCE_BAR_SHAPE1         
+          
+LADDER1_FENCE_BAR: &LADDER1_FENCE_BAR
+  type: Transform
+  elements:
+    -
+      type: Shape
+      translation: [ -0.003, -0.075, 0.025 ]
+      geometry: { type: Box, size: [ 0.006, 0.15, 0.05 ] }
+    -
+      type: Shape
+      translation: [ -0.1752, -0.003, 0.025 ]
+      geometry: { type: Box, size: [ 0.3504, 0.006, 0.05 ] }
+    -
+      <<: *LADDER_FENCE_BAR_R
+      translation: [ -0.3504, 0.0, 0.025 ]
+    -
+      type: Shape
+      translation: [ -0.003, -0.637, 0.025 ]
+      geometry: { type: Box, size: [ 0.006, 0.15, 0.05 ] }
+    -
+      type: Shape
+      translation: [ -0.1752, -0.709, 0.025 ]
+      geometry: { type: Box, size: [ 0.3504, 0.006, 0.05 ] }
+
+LADDER1_FENCE_BAR4: &LADDER1_FENCE_BAR4
+  type: Transform
+  elements:
+    -
+      *LADDER1_FENCE_BAR
+    -
+      type: Transform
+      translation:  [ 0.0, 0.0, *LADDER1_FENCE_BAR_INTERVAL ]
+      elements:
+        -
+          *LADDER1_FENCE_BAR
+        -
+          type: Transform
+          translation:  [ 0.0, 0.0, *LADDER1_FENCE_BAR_INTERVAL ]
+          elements:
+            -
+              *LADDER1_FENCE_BAR
+            -
+              type: Transform
+              translation:  [ 0.0, 0.0, *LADDER1_FENCE_BAR_INTERVAL ]
+              elements:
+                -
+                  *LADDER1_FENCE_BAR
+
+LADDER1_FENCE_BAR16: &LADDER1_FENCE_BAR16
+  type: Transform
+  elements:
+    -
+      *LADDER1_FENCE_BAR4
+    -
+      type: Transform
+      translation:  [ 0.0, 0.0, *LADDER1_FENCE_BAR_INTERVAL4 ]
+      elements:
+        -
+          *LADDER1_FENCE_BAR4
+        -
+          type: Transform
+          translation:  [ 0.0, 0.0, *LADDER1_FENCE_BAR_INTERVAL4 ]
+          elements:
+            -
+              *LADDER1_FENCE_BAR4
+            -
+              type: Transform
+              translation:  [ 0.0, 0.0, *LADDER1_FENCE_BAR_INTERVAL4 ]
+              elements:
+                -
+                  *LADDER1_FENCE_BAR4
+links:
+  -
+    name: Floor
+    jointType: fixed
+    mass: 200.0
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+  -
+    name: Floor1
+    parent: Floor
+    jointType: fixed
+    translation: [ 10.175, 0.0, 20.4 ]
+    material: Ground
+    elements:
+      Visual:
+        resource:
+          uri: "resource/Floor.dae"
+      Collision:
+        elements:
+          -
+            type: Shape
+            translation: [ 1.4875, 6.175, -0.05 ]
+            geometry: { type: Box, size: [ 2.975, 12.35, 0.1 ] }
+          -
+            type: Shape
+            translation: [ 4.475, 1.2185, -0.05 ]
+            geometry: { type: Box, size: [ 3, 2.437, 0.1 ] }
+          -
+            type: Shape
+            translation: [ 8.1625, 6.175, -0.05 ]
+            geometry: { type: Box, size: [ 4.375, 12.35, 0.1 ] }
+          -
+            type: Shape
+            translation: [ 4.475, 8.8938, -0.05 ]
+            geometry: { type: Box, size: [ 3, 6.9125, 0.1 ] }
+          -
+            type: Transform
+            translation: [ 4.175, 5.4375, -0.05 ]
+            rotation: [ 0, 0, 1, 7.5 ]
+            elements:
+              - &FLOOR_SHAPE1
+                type: Shape
+                translation: [ 1.0, -0.2355, 0.0]
+                geometry: { type: Box, size: [ 2, 0.471, 0.1 ] }
+              -
+                type: Transform
+                translation: [ 0.0, -0.471, 0.0 ]
+                rotation: [ 0, 0, 1, 15 ]
+                elements: 
+                  -
+                    *FLOOR_SHAPE1
+                  -
+                    type: Transform
+                    translation: [ 0.0, -0.471, 0.0 ]
+                    rotation: [ 0, 0, 1, 15 ]
+                    elements: 
+                      -
+                        *FLOOR_SHAPE1
+                      -
+                        type: Transform
+                        translation: [ 0.0, -0.471, 0.0 ]
+                        rotation: [ 0, 0, 1, 15 ]
+                        elements: 
+                          -
+                            *FLOOR_SHAPE1
+                          -
+                            type: Transform
+                            translation: [ 0.0, -0.471, 0.0 ]
+                            rotation: [ 0, 0, 1, 15 ]
+                            elements: 
+                              -
+                                *FLOOR_SHAPE1
+                              -
+                                type: Transform
+                                translation: [ 0.0, -0.471, 0.0 ]
+                                rotation: [ 0, 0, 1, 15 ]
+                                elements: 
+                                  -
+                                    *FLOOR_SHAPE1
+          -
+            type: Transform
+            translation: [ 2.975, 5.4375, -0.05 ]
+            rotation: [ 0, 0, 1, 7.5 ]
+            elements:
+              - &FLOOR_SHAPE2
+                type: Shape
+                translation: [ -0.4, -0.5, 0.0]
+                geometry: { type: Box, size: [ 0.8, 1.0, 0.1 ] }
+              -
+                type: Transform
+                translation: [ 0.0, -0.7835, 0.0 ]
+                rotation: [ 0, 0, 1, 15 ]
+                elements: 
+                  -
+                    *FLOOR_SHAPE2
+                  -
+                    type: Transform
+                    translation: [ 0.0, -0.7835, 0.0 ]
+                    rotation: [ 0, 0, 1, 15 ]
+                    elements: 
+                      -
+                        *FLOOR_SHAPE2
+                      -
+                        type: Transform
+                        translation: [ 0.0, -0.7835, 0.0 ]
+                        rotation: [ 0, 0, 1, 15 ]
+                        elements: 
+                          -
+                            *FLOOR_SHAPE2
+                          -
+                            type: Shape
+                            translation: [  -0.9, 0.0, 0.0 ]
+                            geometry: { type: Box, size: [ 0.8, 1.4, 0.1 ] }
+                          -
+                            type: Transform
+                            translation: [ 0.0, -0.7835, 0.0 ]
+                            rotation: [ 0, 0, 1, 15 ]
+                            elements: 
+                              -
+                                *FLOOR_SHAPE2
+                              -
+                                type: Transform
+                                translation: [ 0.0, -0.7835, 0.0 ]
+                                rotation: [ 0, 0, 1, 15 ]
+                                elements: 
+                                  -
+                                    *FLOOR_SHAPE2
+  - 
+    type: SubBody
+    uri: ../1F/ColumnsSub.body
+    prefix: Floor1_
+    parent: Floor1
+  -
+    name: COLUMNS
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Visual:
+        resource: 
+          uri: "resource/Columns.dae"
+  -
+    name: Floor2
+    parent: Floor1
+    jointType: fixed
+    translation: [ 0.0, 0.0, 2.5 ]
+    elements:
+      Visual:
+        resource: 
+          uri: "resource/Floor2.dae"
+          translation: [ 0.0, 0.0, -2.5 ]
+      Collision:
+        resource: { uri: "../resource/CommonParts.yaml", 
+                    node: CHIMNEY_CATWALK }
+  -
+    name: Floor3
+    parent: Floor1
+    jointType: fixed
+    translation: [ 0.0, 0.0, 5.1 ]
+    elements:
+      Visual:
+        resource: 
+          translation: [ 0.0, 0.0, -5.1 ]
+          uri: "resource/Floor3.dae"
+      Collision: &FLOOR3_SHAPE
+        elements:
+          -
+            type: Resource
+            uri: "../resource/CommonParts.yaml"
+            node: CHIMNEY_CATWALK 
+          -
+            type: Transform
+            translation: [ 5.7, 4.975, 0.0 ]
+            elements:
+              Shape:
+                translation: [ 1.8, 3.295, -0.05 ]
+                geometry: { type: Box, size: [ 3.6, 6.19, 0.1 ] }
+  - 
+    type: SubBody
+    uri: ../1F/ColumnsSub.body
+    prefix: Floor3_
+    parent: Floor3
+  -
+    name: Floor4
+    parent: Floor1
+    jointType: fixed
+    translation: [ 0.0, 0.0, 7.6 ]
+    elements:
+      Visual:
+        resource: 
+          translation: [ 0.0, 0.0, -7.6 ]
+          uri: "resource/Floor4.dae"
+      Collision:
+        resource: { uri: "../resource/CommonParts.yaml", 
+                    node: CHIMNEY_CATWALK }
+  -
+    name: Floor5
+    parent: Floor1
+    jointType: fixed
+    translation: [ 0.0, 0.0, 10.2 ]
+    elements:
+      Visual:
+        resource: 
+          translation: [ 0.0, 0, -10.2 ]
+          uri: "resource/Floor5.dae"
+      Collision: *FLOOR3_SHAPE
+  -
+    name: Handrails
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Visual:
+        resource: 
+          uri: "resource/Handrails.dae"
+  - 
+    type: SubBody
+    uri: Handrails_outside.body
+    prefix: Chimney1F_
+    parent: Floor1
+  - 
+    type: SubBody
+    uri: Handrails_outside.body
+    prefix: Chimney2F_
+    parent: Floor2
+
+  - 
+    type: SubBody
+    uri: Handrails_outside.body
+    prefix: Chimney3F_
+    parent: Floor3
+  - 
+    type: SubBody
+    uri: Handrails_outside.body
+    prefix: Chimney4F_
+    parent: Floor4
+  -
+    name: Chimney1_1
+    parent: Floor1
+    jointType: fixed
+    translation: [ 4.30408, 6.37705, 0.1 ]
+    rotation: [ 0, 0, 1, 3 ]
+    elements:
+      Visual:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, -3 ] 
+            elements:
+              Resource:
+                translation: [ -4.30408, -6.37705, -0.1 ]
+                uri: "resource/Chimney1.dae"
+      Collision:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, 7.5 ] 
+            elements: &CHIMNEY1_QUARTER
+              - &CHIMNEY1_SHAPE
+                type: Shape
+                translation: [ *CHIMNEY1_L2, 0.0045, 6.25 ]
+                geometry:   
+                  { type: Box, size: [ *CHIMNEY1_L, 0.009, 12.5 ]  }
+              - 
+                type: Transform
+                translation: [ *CHIMNEY1_L, 0.0, 0.0 ]
+                rotation: [ 0, 0, 1, 15 ]
+                elements: 
+                  -
+                    *CHIMNEY1_SHAPE
+                  - 
+                    type: Transform
+                    translation: [ *CHIMNEY1_L, 0.0, 0.0 ]
+                    rotation: [ 0, 0, 1, 15 ]
+                    elements: 
+                      -
+                        *CHIMNEY1_SHAPE
+                      - 
+                        type: Transform
+                        translation: [ *CHIMNEY1_L, 0.0, 0.0 ]
+                        rotation: [ 0, 0, 1, 15 ]
+                        elements: 
+                          -
+                            *CHIMNEY1_SHAPE
+                          - 
+                            type: Transform
+                            translation: [ *CHIMNEY1_L, 0.0, 0.0 ]
+                            rotation: [ 0, 0, 1, 15 ]
+                            elements: 
+                              -
+                                *CHIMNEY1_SHAPE
+                              - 
+                                type: Transform
+                                translation: [ *CHIMNEY1_L, 0.0, 0.0 ]
+                                rotation: [ 0, 0, 1, 15 ]
+                                elements: 
+                                  -
+                                    *CHIMNEY1_SHAPE
+  -
+    name: Chimney1_2
+    parent: Chimney1_1
+    jointType: fixed
+    translation: [ *CHIMNEY1_R, *CHIMNEY1_R, 0.0 ] 
+    rotation: [ 0, 0, 1, 90 ]
+    elements:
+      Collision:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, 7.5 ]
+            elements: *CHIMNEY1_QUARTER
+  -
+    name: Chimney1_3
+    parent: Chimney1_2
+    jointType: fixed
+    translation: [ *CHIMNEY1_R, *CHIMNEY1_R, 0.0 ] 
+    rotation: [ 0, 0, 1, 90 ]
+    elements:
+      Collision:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, 7.5 ]
+            elements: *CHIMNEY1_QUARTER
+  -
+    name: Chimney1_4
+    parent: Chimney1_3
+    jointType: fixed
+    translation: [ *CHIMNEY1_R, *CHIMNEY1_R, 0.0 ] 
+    rotation: [ 0, 0, 1, 90 ]
+    elements:
+      Collision:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, 7.5 ]
+            elements: *CHIMNEY1_QUARTER
+  -
+    name: Chimney1Ladder
+    parent: Floor1
+    jointType: fixed
+    translation: [ 3.09023, 6.91262 ,0.780 ]
+    rotation: [ 0, 0, 1, 48 ]
+    elements:
+      Visual:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, -48 ]
+            elements:
+              Resource:
+                translation: [ -3.09023, -6.91262, -0.780 ]
+                uri: "resource/Chimney1Ladder.dae"
+      Collision:
+        elements: &CHIMNY_LADDER1
+          -
+            type: Shape
+            translation: [ -0.11, -0.0045, 6.3 ]
+            geometry: &LADDER1_SHAPE1
+              { type: Box, size: [ 0.22, 0.009, 12.6 ] }
+          - type: Shape
+            translation: [ -0.11, -0.4043, 6.3 ]
+            geometry: *LADDER1_SHAPE1
+          -
+            type: Transform
+            translation: [ -0.22045, -0.2045, 0.0 ]
+            elements:
+              -
+                type: Shape
+                translation: [ 0.0, 0.2, 6.35 ]
+                rotation: [ 1, 0, 0, 90 ]
+                geometry: &LADDER1_SHAPE2
+                  { type: Cylinder, radius: 0.021, height: 13.0  }
+              -
+                type: Shape
+                translation: [ 0.0, -0.2, 6.35 ]
+                rotation: [ 1, 0, 0, 90 ]
+                geometry: *LADDER1_SHAPE2
+              - 
+                type: Transform
+                elements:
+                  - 
+                    <<: *LADDER1_BAR18
+                  -
+                    type: Transform
+                    translation: [ 0.0, 0.0, *LADDER1_BAR_INTERVAL18 ]
+                    elements:
+                      -
+                        *LADDER1_BAR18
+                      -
+                        type: Transform
+                        translation: [ 0.0, 0.0, *LADDER1_BAR_INTERVAL18 ]
+                        elements:
+                          -
+                            *LADDER1_BAR_SHAPE
+                  -
+                    type: Transform
+                    translation: [ -0.35, 0.0, 1.9 ]
+                    elements:
+                      - &LADDER1_FENCE_PILLAR
+                        type: Shape
+                        translation: [ 0.0, 0.3437, 5.275 ]
+                        rotation: [ 1, 0, 0, 90 ]
+                        geometry: { type: Cylinder, radius: 0.0065, height: 10.55  }
+                      -
+                        type: Transform
+                        rotation: [ 0, 0, 1, 30 ]
+                        elements: *LADDER1_FENCE_PILLAR
+                      -
+                        type: Transform
+                        rotation: [ 0, 0, 1, 60 ]
+                        elements: *LADDER1_FENCE_PILLAR
+                      -
+                        type: Transform
+                        rotation: [ 0, 0, 1, 120 ]
+                        elements: *LADDER1_FENCE_PILLAR
+                      -
+                        type: Transform
+                        rotation: [ 0, 0, 1, 150 ]
+                        elements: *LADDER1_FENCE_PILLAR
+                      -
+                        type: Transform
+                        rotation: [ 0, 0, 1, 180 ]
+                        elements: *LADDER1_FENCE_PILLAR
+          -
+            type: Transform
+            translation: [ -0.22045, 0.15174, 1.9 ]
+            elements:
+              -
+                <<: *LADDER1_FENCE_BAR16
+  -
+    name: Chimney1Stage
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Visual:
+        elements:
+          Resource: 
+            uri: "resource/Chimney1Stage.dae"
+      Collision:
+        elements:
+            Transform:
+              translation: [ 4.22557, 7.875, 12.104 ]
+              elements:
+                -
+                  type: Transform
+                  rotation: [ 0, 0, 1, -19.56 ]
+                  elements: 
+                    -
+                      type: Shape
+                      translation: [ 0.0373, -2.0335, 0.0 ]
+                      geometry: 
+                        { type: Box, size: [ 0.59, 0.991, 1.0 ] }
+                    -
+                      type: Shape
+                      translation: [ -0.2289, -2.0329, 0.0 ]
+                      rotation: [ 0, 0, 1, -7.6 ]
+                      geometry: 
+                        { type: Box, size: [ 0.074, 0.991, 1.0 ] }
+                -
+                  type: Transform
+                  rotation: [ 0, 0, 1, -4.56 ]
+                  elements: &STAGE_SHAPE
+                    Shape:
+                      translation: [ 0.0, -2.0335, 0.0 ]
+                      geometry: 
+                        { type: Box, size: [ 0.667, 0.991, 1.0 ] }
+                -
+                  type: Transform
+                  rotation: [ 0, 0, 1, 10.44 ]
+                  elements: *STAGE_SHAPE
+                -
+                  type: Transform
+                  rotation: [ 0, 0, 1, 25.44 ]
+                  elements:
+                    -
+                      type: Shape
+                      translation: [ 0.0, -2.0635, 0.0 ]
+                      geometry: 
+                        { type: Box, size: [ 0.667, 0.931, 1.0 ] }
+                    -
+                      type: Shape
+                      translation: [ 0.0, -1.589, 0.0 ]
+                      geometry: 
+                        { type: Box, size: [ 0.6, 0.1, 1.0 ] }
+                -
+                  type: Transform
+                  rotation: [ 0, 0, 1, 40.44 ]
+                  elements:
+                    -
+                      type: Shape
+                      translation: [ -0.2355, -2.0337, 0.0 ]
+                      geometry: 
+                        { type: Box, size: [ 0.194, 0.991, 1.0 ] }
+                    -
+                      type: Shape
+                      translation: [ -0.207, -2.030, 0.0 ]
+                      rotation: [ 0, 0, 1, -3.21 ]
+                      geometry: 
+                        { type: Box, size: [ 0.194, 0.991, 1.0 ] }
+  - 
+    name: Chimney1StageHandrails
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Visual:
+        elements:
+          Resource:
+            uri: "resource/Chimney1StageHandrails.dae"
+      Collision:
+        elements:
+            Transform:
+              translation: [ 4.22557, 7.875, 12.604 ]
+              elements:
+                -
+                  type: Transform
+                  rotation: [ 0, 0, 1, -26.75 ]
+                  elements: 
+                    Transform: 
+                      translation: [ 0.0, -2.535, 0.6 ]
+                      elements:
+                        - &HANDRAILS_PILLAR
+                          type: Shape
+                          rotation: [ 1, 0, 0, 90 ]
+                          geometry: 
+                            { type: Cylinder, radius: 0.0123, height: 1.2 }
+                        -
+                          type: Transform
+                          rotation: [ [ 0, 0, 1, 3.6 ], [ 0, 1, 0, 0.3 ] ]
+                          elements:
+                            -
+                              type: Shape
+                              translation: [ 0.232, -0.002, 0.618 ]
+                              rotation: [ 0, 0, 1, 90 ]
+                              geometry: 
+                                { type: Cylinder, radius: 0.0213, height: 0.495 }
+                -
+                  type: Transform
+                  rotation: [ 0, 0, 1, -12.04 ]
+                  elements: 
+                    Transform: &HANDRAILS_SHAPE1
+                      translation: [ 0.0, -2.5381, 0.6 ]
+                      elements:
+                        -
+                          *HANDRAILS_PILLAR
+                        -
+                          type: Transform
+                          rotation: [ [ 0, 0, 1, 3.6 ], [ 0, 1, 0, 0.3 ] ]
+                          elements:
+                            -
+                              type: Shape
+                              translation: [ 0.155, 0.003, 0.614 ]
+                              rotation: [ 0, 0, 1, 90 ]
+                              geometry: 
+                                { type: Cylinder, radius: 0.0213, height: 0.67 }
+                -
+                  type: Transform
+                  translation: [ 0.0, 0.0, -0.003 ]
+                  rotation: [ 0, 0, 1, 2.96 ]
+                  elements: 
+                    Transform: *HANDRAILS_SHAPE1
+                -
+                  type: Transform
+                  rotation: [ 0, 0, 1, 17.945 ]
+                  elements: 
+                    Transform: 
+                      translation: [ 0.0,  -2.5395, 0.6 ]
+                      elements:
+                        -
+                          *HANDRAILS_PILLAR
+                        -
+                          type: Transform
+                          rotation: [ [ 0, 0, 1, 3.6 ], [ 0, 1, 0, 0.3 ] ]
+                          elements:
+                            -
+                              type: Shape
+                              translation: [ 0.155, 0.008, 0.605 ]
+                              rotation: [ 0, 0, 1, 90 ]
+                              geometry: 
+                                { type: Cylinder, radius: 0.0213, height: 0.67 }
+                -
+                  type: Transform
+                  rotation: [ 0, 0, 1, 32.93 ]
+                  elements:
+                    Transform: 
+                      translation: [ 0.0, -2.54, 0.6 ]
+                      elements:
+                        -
+                          *HANDRAILS_PILLAR
+                        -
+                          type: Transform
+                          rotation: [ [ 0, 0, 1, 3.6 ], [ 0, 1, 0, 0.3 ] ]
+                          elements:
+                            -
+                              type: Shape
+                              translation: [ -0.002, 0.009, 0.60 ]
+                              rotation: [ 0, 0, 1, 90 ]
+                              geometry: 
+                                { type: Cylinder, radius: 0.0213, height: 0.36 }
+                        -
+                          type: Transform
+                          translation: [ 0.1815, 0.0218, 0.0 ]
+                          elements:
+                            -
+                              *HANDRAILS_PILLAR
+                            -
+                              type: Transform
+                              rotation: [ 0, 0, 1, 94.17 ]
+                              elements:
+                                -
+                                  <<: *HANDRAILS_PILLAR
+                                  translation: [ 0.5143, 0.0, 0.0 ]
+                                -
+                                  <<: *HANDRAILS_PILLAR
+                                  translation: [ 0.967, -0.003, 0.0 ]
+                                -
+                                  type: Shape
+                                  translation: [ 0.48, -0.001, 0.611 ]
+                                  rotation: [ [ 0, 0, 1, 90 ], [ 1, 0, 0, -1.3 ] ]
+                                  geometry: 
+                                    { type: Cylinder, radius: 0.0213, height: 0.98 }
+  -
+    name: Chimney2_1
+    parent: Floor1
+    jointType: fixed
+    translation: [ 3.0378, 1.5288, 0.0 ]
+    rotation: [ 0, 0, 1, -5 ]
+    elements:
+      Visual:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, 5 ] 
+            elements:
+              Resource:
+                translation: [ -3.0378, -1.5288, 0.0 ]
+                uri: "resource/Chimney2.dae"
+      Collision:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, 7.5 ] 
+            elements: &CHIMNEY2_QUARTER
+              - &CHIMNEY2_SHAPE
+                type: Shape
+                translation: [ *CHIMNEY2_L2, 0.0045, 6.25 ]
+                geometry:   
+                  { type: Box, size: [ *CHIMNEY2_L, 0.009, 12.5 ]  }
+              - 
+                type: Transform
+                translation: [ *CHIMNEY2_L, 0.0, 0.0 ]
+                rotation: [ 0, 0, 1, 15 ]
+                elements: 
+                  -
+                    *CHIMNEY2_SHAPE
+                  - 
+                    type: Transform
+                    translation: [ *CHIMNEY2_L, 0.0, 0.0 ]
+                    rotation: [ 0, 0, 1, 15 ]
+                    elements: 
+                      -
+                        *CHIMNEY2_SHAPE
+                      - 
+                        type: Transform
+                        translation: [ *CHIMNEY2_L, 0.0, 0.0 ]
+                        rotation: [ 0, 0, 1, 15 ]
+                        elements: 
+                          -
+                            *CHIMNEY2_SHAPE
+                          - 
+                            type: Transform
+                            translation: [ *CHIMNEY2_L, 0.0, 0.0 ]
+                            rotation: [ 0, 0, 1, 15 ]
+                            elements: 
+                              -
+                                *CHIMNEY2_SHAPE
+                              - 
+                                type: Transform
+                                translation: [ *CHIMNEY2_L, 0.0, 0.0 ]
+                                rotation: [ 0, 0, 1, 15 ]
+                                elements: 
+                                  -
+                                    *CHIMNEY2_SHAPE
+  -
+    name: Chimney2_2
+    parent: Chimney2_1
+    jointType: fixed
+    translation: [ *CHIMNEY2_R, *CHIMNEY2_R, 0.0 ] 
+    rotation: [ 0, 0, 1, 90 ]
+    elements:
+      Collision:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, 7.5 ]
+            elements: *CHIMNEY2_QUARTER
+  -
+    name: Chimney2_3
+    parent: Chimney2_2
+    jointType: fixed
+    translation: [ *CHIMNEY2_R, *CHIMNEY2_R, 0.0 ] 
+    rotation: [ 0, 0, 1, 90 ]
+    elements:
+      Collision:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, 7.5 ]
+            elements: *CHIMNEY2_QUARTER
+  -
+    name: Chimney2_4
+    parent: Chimney2_3
+    jointType: fixed
+    translation: [ *CHIMNEY2_R, *CHIMNEY2_R, 0.0 ] 
+    rotation: [ 0, 0, 1, 90 ]
+    elements:
+      Collision:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, 7.5 ]
+            elements: *CHIMNEY2_QUARTER
+  -
+    name: Chimney2Ladder
+    parent: Floor1
+    jointType: fixed
+    translation: [ 2.44202, 3.24715 ,0.68 ]
+    rotation: [ 0, 0, 1, -35 ]
+    elements:
+      Visual:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, 35 ]
+            elements:
+              Resource:
+                translation: [ -2.44202, -3.24715, -0.68 ]
+                uri: "resource/Chimney2Ladder.dae"
+      Collision:
+        elements: *CHIMNY_LADDER1
+  -
+    name: Chimney2Stage
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Visual:
+        elements:
+          Resource:
+            uri: "resource/Chimney2Stage.dae"
+      Collision:
+        elements:
+            Transform:
+              translation: [ 1.0923, 2.7017, 12.0 ]
+              rotation: [ 0, 0, 1, 3.33 ]
+              elements:
+                -
+                  type: Transform
+                  elements:
+                    - &CHIMNY2_STAGE_SHAPE
+                      type: Shape
+                      translation: [ 0.495, -0.2676, 0.0 ]
+                      geometry: 
+                        { type: Box, size: [ 0.99, 0.5352, 1.0 ] }
+                    -
+                      type: Transform
+                      rotation: [ 0, 0, 1, -15 ]
+                      elements:
+                        -
+                          type: Transform
+                          translation: [ 0.0, 0.5352, 0.0 ]
+                          elements:
+                            -
+                              type: Shape
+                              translation: [ 0.04, -0.2676, 0.0 ]
+                              geometry: 
+                                { type: Box, size: [ 0.08, 0.5352, 1.0 ] }
+                            -
+                              type: Shape
+                              translation: [ 0.9415, -0.2707, 0.0 ]
+                              geometry: 
+                                { type: Box, size: [ 0.1, 0.28, 1.0 ] }
+                            -
+                              type: Transform
+                              rotation: [ 0, 0, 1, -7.512 ]
+                              elements:
+                                -
+                                  type: Shape
+                                  translation: [ 0.535, -0.25, 0.0 ]
+                                  geometry: 
+                                    { type: Box, size: [ 0.93, 0.5, 1.0 ] }
+                    -
+                      type: Transform
+                      translation: [ 0.0, -0.5352, 0.0 ]
+                      rotation: [ 0, 0, 1, 15 ]
+                      elements:
+                        -
+                          *CHIMNY2_STAGE_SHAPE
+                        -
+                          type: Transform
+                          translation: [ 0.0, -0.5352, 0.0 ]
+                          rotation: [ 0, 0, 1, 15 ]
+                          elements:
+                            -
+                              *CHIMNY2_STAGE_SHAPE
+                            -
+                              type: Transform
+                              translation: [ 0.0, -0.5352, 0.0 ]
+                              rotation: [ 0, 0, 1, 15 ]
+                              elements:
+                                -
+                                  *CHIMNY2_STAGE_SHAPE
+                                -
+                                  type: Transform
+                                  translation: [ 0.0, -0.5352, 0.0 ]
+                                  rotation: [ 0, 0, 1, 15 ]
+                                  elements:
+                                    -
+                                      type: Shape
+                                      translation: [ 0.04, -0.2676, 0.0 ]
+                                      geometry: 
+                                        { type: Box, size: [ 0.08, 0.5352, 1.0 ] }
+                                    -
+                                      type: Shape
+                                      translation: [ 0.9415, -0.2045, 0.0 ]
+                                      geometry: 
+                                        { type: Box, size: [ 0.1, 0.4, 1.0 ] }
+                                    -
+                                      type: Transform
+                                      translation: [ 0, -0.5352, 0 ]
+                                      rotation: [ 0, 0, 1, 7.512 ]
+                                      elements:
+                                        -
+                                          type: Shape
+                                          translation: [ 0.535, 0.25, 0.0 ]
+                                          geometry: 
+                                            { type: Box, size: [ 0.93, 0.5, 1.0 ] }
+                                      
+
+  -
+    name: Chimney2StageHandrails
+    parent: Floor1
+    jointType: fixed
+    elements:
+      Visual:
+        elements:
+          Resource:
+            uri: "resource/Chimney2StageHandrails.dae"
+      Collision:
+        elements:
+            Transform:
+              translation: [ 1.1045, 2.7041, 13.1 ]
+              rotation: [ 0, 0, 1, 3.2 ]
+              elements:
+                -
+                  type: Transform
+                  rotation: [ 0, 0, 1, -15 ]
+                  elements:
+                    -
+                      <<: *HANDRAILS_PILLAR
+                      translation: [ 0.00, 0.518, 0.0 ]
+                    -
+                      type: Transform
+                      translation: [ 0.0, 0.0, 0.6 ]
+                      rotation: [ [ 0, 0, 1, 0.1 ], [ 0, 1, 0, 0.3 ] ]
+                      elements:
+                        -
+                          type: Shape
+                          translation: [ -0.014, 0.306, 0.02065 ]
+                          geometry: 
+                            { type: Cylinder, radius: 0.0213, height: 0.54 }
+                - 
+                  *HANDRAILS_PILLAR
+                -
+                  type: Transform
+                  translation: [ 0.0, 0.0, 0.6 ]
+                  rotation: [ [ 0, 0, 1, 0.1 ], [ 0, 1, 0, 0.3 ] ]
+                  elements:
+                    -
+                      type: Shape
+                      translation: [ -0.0025, -0.23, 0.02065 ]
+                      geometry: &HANDRAILS_BAR
+                        { type: Cylinder, radius: 0.0213, height: 0.55 }
+                -
+                  type: Transform
+                  translation: [ 0.0, -0.5322, 0.0 ]
+                  rotation: [ 0, 0, 1, 15.0 ]
+                  elements:
+                    -
+                      *HANDRAILS_PILLAR
+                    -
+                      type: Transform
+                      translation: [ 0.0, 0.0, 0.6 ]
+                      rotation: [ [ 0, 0, 1, 0.1 ], [ 0, 1, 0, 0.3 ] ]
+                      elements:
+                        -
+                          type: Shape
+                          translation: [ 0.0085, -0.23, 0.02065 ]
+                          geometry: *HANDRAILS_BAR
+                    -
+                      type: Transform
+                      translation: [ 0.00, -0.5352, 0.0 ]
+                      rotation: [ 0, 0, 1, 15 ]
+                      elements:
+                        -
+                          *HANDRAILS_PILLAR
+                        -
+                          type: Transform
+                          rotation: [ [ 0, 0, 1, 0.1 ], [ 0, 1, 0, 0.3 ] ]
+                          translation: [ 0.0, 0.0, 0.6 ]
+                          elements:
+                            -
+                              type: Shape
+                              translation: [ 0.019, -0.23, 0.02065 ]
+                              geometry: *HANDRAILS_BAR
+                        -
+                          type: Transform
+                          translation: [ 0.0, -0.5322, 0.0 ]
+                          rotation: [ 0, 0, 1, 15.6 ]
+                          elements:
+                            -
+                              *HANDRAILS_PILLAR
+                            -
+                              type: Transform
+                              rotation: [ [ 0, 0, 1, -0.4 ], [ 0, 1, 0, -3.6 ] ] 
+                              translation: [ 0.0, 0.0, 0.598 ]
+                              elements:
+                                -
+                                  type: Shape
+                                  translation: [ 0.029, -0.245, 0.02065 ]
+                                  geometry: *HANDRAILS_BAR
+                            -
+                              type: Transform
+                              translation: [ 0.0, -0.5342, 0.0 ]
+                              rotation: [ 0, 0, 1, 15 ]
+                              elements:
+                                -
+                                  *HANDRAILS_PILLAR
+                                -
+                                  type: Transform
+                                  rotation: [ 0, 1, 0, -3 ]
+                                  translation: [ 0.0, 0.0, 0.597 ]
+                                  elements:
+                                    -
+                                      type: Shape
+                                      translation: [ 0.029, -0.25, 0.02065 ]
+                                      geometry: *HANDRAILS_BAR
+                                -
+                                  type: Transform
+                                  translation: [ -0.005, -0.517, 0.0 ]
+                                  rotation: [ 0, 0, 1, 7 ]
+                                  elements:
+                                    -
+                                      *HANDRAILS_PILLAR
+                                    -
+                                      <<: *HANDRAILS_PILLAR
+                                      translation: [ 0.473, 0, 0 ]
+                                    -
+                                      <<: *HANDRAILS_PILLAR
+                                      translation: [ 0.973, 0, 0 ]
+                                    -
+                                      type: Shape
+                                      translation: [ 0.52, -0.004, 0.62 ]
+                                      rotation: [ 0, 0, 1, 90 ]
+                                      geometry: 
+                                        { type: Cylinder, radius: 0.0213, height: 1.01 }
+  -
+    name: Chimney3_1
+    parent: Floor1
+    jointType: fixed
+    translation: [ 8.07395, 2.425, 0.1 ]
+    rotation: [ 0, 0, 1, -0.19 ]
+    elements:
+      Visual:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, 0.19 ] 
+            elements:
+              Resource:
+                translation: [ -8.07395, -2.425, -0.1 ]
+                uri: "resource/Chimney3.dae"
+      Collision:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, 7.5 ] 
+            elements: &CHIMNEY3_QUARTER
+              - &CHIMNEY3_SHAPE
+                type: Shape
+                translation: [ *CHIMNEY3_L2, 0.0045, 6.25 ]
+                geometry:   
+                  { type: Box, size: [ *CHIMNEY3_L, 0.009, 12.5 ]  }
+              - 
+                type: Transform
+                translation: [ *CHIMNEY3_L, 0.0, 0.0 ]
+                rotation: [ 0, 0, 1, 15 ]
+                elements: 
+                  -
+                    *CHIMNEY3_SHAPE
+                  - 
+                    type: Transform
+                    translation: [ *CHIMNEY3_L, 0.0, 0.0 ]
+                    rotation: [ 0, 0, 1, 15 ]
+                    elements: 
+                      -
+                        *CHIMNEY3_SHAPE
+                      - 
+                        type: Transform
+                        translation: [ *CHIMNEY3_L, 0.0, 0.0 ]
+                        rotation: [ 0, 0, 1, 15 ]
+                        elements: 
+                          -
+                            *CHIMNEY3_SHAPE
+                          - 
+                            type: Transform
+                            translation: [ *CHIMNEY3_L, 0.0, 0.0 ]
+                            rotation: [ 0, 0, 1, 15 ]
+                            elements: 
+                              -
+                                *CHIMNEY3_SHAPE
+                              - 
+                                type: Transform
+                                translation: [ *CHIMNEY3_L, 0.0, 0.0 ]
+                                rotation: [ 0, 0, 1, 15 ]
+                                elements: 
+                                  -
+                                    *CHIMNEY3_SHAPE
+  -
+    name: Chimney3_2
+    parent: Chimney3_1
+    jointType: fixed
+    translation: [ *CHIMNEY3_R, *CHIMNEY3_R, 0.0 ] 
+    rotation: [ 0, 0, 1, 90 ]
+    elements:
+      Collision:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, 7.5 ]
+            elements: *CHIMNEY3_QUARTER
+  -
+    name: Chimney3_3
+    parent: Chimney3_2
+    jointType: fixed
+    translation: [ *CHIMNEY3_R, *CHIMNEY3_R, 0.0 ] 
+    rotation: [ 0, 0, 1, 90 ]
+    elements:
+      Collision:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, 7.5 ]
+            elements: *CHIMNEY3_QUARTER
+  -
+    name: Chimney3_4
+    parent: Chimney3_3
+    jointType: fixed
+    translation: [ *CHIMNEY3_R, *CHIMNEY3_R, 0.0 ] 
+    rotation: [ 0, 0, 1, 90 ]
+    elements:
+      Collision:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, 7.5 ]
+            elements: *CHIMNEY3_QUARTER
+  -
+    name: Chimney3Ladder
+    parent: Floor1
+    jointType: fixed
+    translation: [ 8.38723, 3.31051 ,0.78 ]
+    rotation: [ 0, 0, 1, 255 ]
+    elements:
+      Visual:
+        elements:
+          Transform:
+            rotation: [ 0, 0, 1, -255 ]
+            elements:
+              Resource:
+                translation: [ -8.38723, -3.31051 ,-0.78 ]
+                uri: "resource/Chimney3Ladder.dae"
+      Collision:
+        elements: *CHIMNY_LADDER1
+

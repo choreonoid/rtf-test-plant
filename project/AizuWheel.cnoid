@@ -1,0 +1,188 @@
+items: 
+  id: 0
+  name: "Root"
+  plugin: Base
+  class: RootItem
+  children: 
+    - 
+      id: 1
+      name: "AizuWheel"
+      plugin: Body
+      class: BodyItem
+      data: 
+        modelFile: "${SHARE}/model/AizuWheel/AizuWheel.body"
+        currentBaseLink: "CHASSIS"
+        rootPosition: [ 11, 8, 0.035 ]
+        rootAttitude: [ 
+          -1, 0, 0, 
+          0, -1, 0, 
+          0, 0, 1 ]
+        jointPositions: [ 
+           0.000000,  0.000000, -1.570796,  2.635447,  0.471239, -1.623156,  0.104720,  1.745329,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
+        initialRootPosition: [ 11, 8, 0.035 ]
+        initialRootAttitude: [ 
+          -1, 0, 0, 
+          0, -1, 0, 
+          0, 0, 1 ]
+        initialJointPositions: [ 
+           0.000000,  0.000000, -1.570796,  2.635447,  0.471239, -1.623156,  0.104720,  1.745329,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
+        zmp: [ 0, 0, 0 ]
+        collisionDetection: true
+        selfCollisionDetection: false
+        isEditable: true
+      children: 
+        - 
+          id: 2
+          name: "AizuWheelController"
+          plugin: Body
+          class: SimpleControllerItem
+          data: 
+            isNoDelayMode: false
+            controllerOptions: ""
+            controller: "AizuWheelController.so"
+            baseDirectory: "Controller directory"
+            reloading: true
+          children: 
+            - 
+              id: 3
+              name: "Jaco2Controller"
+              plugin: Body
+              class: SimpleControllerItem
+              data: 
+                isNoDelayMode: false
+                controllerOptions: "ARM_"
+                controller: "Jaco2Controller.so"
+                baseDirectory: "Controller directory"
+                reloading: true
+        - 
+          id: 4
+          name: "BodyTrackingCamera"
+          plugin: Body
+          class: BodyTrackingCameraItem
+          data: 
+            keepRelativeAttitude: true
+            nearClipDistance: 0.01
+            farClipDistance: 100
+views: 
+  - 
+    id: 1
+    plugin: Base
+    class: ItemTreeView
+    mounted: true
+    state: 
+      checked: [ 1, 3, 4 ]
+      expanded: [ 1 ]
+  - 
+    id: 3
+    plugin: Base
+    class: SceneView
+    mounted: true
+    state: 
+      editMode: false
+      viewpointControlMode: thirdPerson
+      collisionLines: false
+      polygonMode: fill
+      defaultHeadLight: true
+      defaultHeadLightIntensity: 0.8
+      headLightLightingFromBack: false
+      worldLight: true
+      worldLightIntensity: 0.7
+      worldLightAmbient: 0.3
+      additionalLights: true
+      fog: true
+      floorGrid: false
+      floorGridSpan: 10
+      floorGridInterval: 0.5
+      xzGridSpan: 10
+      xzGridInterval: 0.5
+      xzGrid: false
+      yzGridSpan: 10
+      yzGridInterval: 0.5
+      texture: true
+      lineWidth: 1
+      pointSize: 1
+      normalVisualization: false
+      normalLength: 0.01
+      coordinateAxes: true
+      fpsTestIteration: 1
+      showFPS: false
+      enableNewDisplayListDoubleRendering: false
+      useBufferForPicking: true
+      upsideDown: false
+      cameras: 
+        - 
+          camera: [ System, Perspective ]
+          fieldOfView: 0.698132
+          near: 0.01
+          far: 100
+          eye: [ 13.5063752, 9.36247586, 1.13684327 ]
+          direction: [ -0.896516053, -0.409434122, -0.169182346 ]
+          up: [ -0.153893094, -0.0702821589, 0.985584767 ]
+        - 
+          camera: [ System, Orthographic ]
+          orthoHeight: 5.73009
+          near: 0.01
+          far: 100
+        - 
+          camera: BodyTrackingCamera
+          isCurrent: true
+          fieldOfView: 0.785398
+          near: 0.01
+          far: 100
+          eye: [ 12.8290424, 9.10864197, 0.642903202 ]
+          direction: [ -0.877698722, -0.472274467, -0.0812513478 ]
+          up: [ -0.0715507765, -0.0385002325, 0.996693643 ]
+      backgroundColor: [ 0.100000001, 0.100000001, 0.300000012 ]
+      gridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      xzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      yzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      dedicatedItemTreeViewChecks: false
+  - 
+    id: 4
+    name: "Camera Scene"
+    plugin: Base
+    class: SceneView
+    mounted: true
+    state: 
+      editMode: false
+      viewpointControlMode: thirdPerson
+      collisionLines: false
+      polygonMode: fill
+      defaultHeadLight: true
+      defaultHeadLightIntensity: 0.8
+      headLightLightingFromBack: false
+      worldLight: true
+      worldLightIntensity: 0.7
+      worldLightAmbient: 0.3
+      additionalLights: true
+      fog: true
+      floorGrid: false
+      floorGridSpan: 10
+      floorGridInterval: 0.5
+      xzGridSpan: 10
+      xzGridInterval: 0.5
+      xzGrid: false
+      yzGridSpan: 10
+      yzGridInterval: 0.5
+      texture: true
+      lineWidth: 1
+      pointSize: 1
+      normalVisualization: false
+      normalLength: 0.01
+      coordinateAxes: true
+      fpsTestIteration: 1
+      showFPS: false
+      enableNewDisplayListDoubleRendering: false
+      useBufferForPicking: true
+      upsideDown: false
+      cameras: 
+        - 
+          camera: [ AizuWheel, ARM_CAMERA ]
+          isCurrent: true
+      backgroundColor: [ 0.100000001, 0.100000001, 0.300000012 ]
+      gridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      xzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      yzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      dedicatedItemTreeViewChecks: false
