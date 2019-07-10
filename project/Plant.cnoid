@@ -26,7 +26,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/Floor.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/Floor.body"
                 currentBaseLink: "1F_SURFACE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -49,7 +49,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/Columns.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/Columns.body"
                 currentBaseLink: "COLUMN1"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -72,7 +72,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/Catwalk.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/Catwalk.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -95,7 +95,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/Handrails.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/Handrails.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -118,7 +118,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/Ramp.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/Ramp.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, -0.015 ]
                 rootAttitude: [ 
@@ -141,7 +141,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/Platform.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/Platform.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -164,7 +164,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/SteelPlate.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/SteelPlate.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -187,7 +187,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/Grating.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/Grating.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -210,7 +210,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/PipeL.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/PipeL.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -233,7 +233,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/ButtonBox.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/ButtonBox.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -256,7 +256,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/SwitchBoard.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/SwitchBoard.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -279,7 +279,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/TankA.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/TankA.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -302,7 +302,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/TankPlatformStage.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/TankPlatformStage.body"
                 currentBaseLink: "STAGE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -325,7 +325,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/TankPlatformStageHandrails.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/TankPlatformStageHandrails.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -348,7 +348,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/TankPlatformStairs.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/TankPlatformStairs.body"
                 currentBaseLink: "STAIRS"
                 rootPosition: [ 4.06, 4.7455, 0 ]
                 rootAttitude: [ 
@@ -371,7 +371,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/TankPlatformStairsHandrails.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/TankPlatformStairsHandrails.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 4.06, 4.7455, 0 ]
                 rootAttitude: [ 
@@ -394,7 +394,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/TankPlatformStairs.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/TankPlatformStairs.body"
                 currentBaseLink: "STAIRS"
                 rootPosition: [ 7.061, 7.03, 0 ]
                 rootAttitude: [ 
@@ -417,7 +417,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/TankPlatformStairsHandrails.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/TankPlatformStairsHandrails.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 7.061, 7.03, 0 ]
                 rootAttitude: [ 
@@ -440,7 +440,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/PipeG.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/PipeG.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -463,7 +463,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/PipeB.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/PipeB.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -486,7 +486,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/FireHydrant.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/FireHydrant.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -509,7 +509,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/TankB.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/TankB.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0.03, 0, 0 ]
                 rootAttitude: [ 
@@ -532,7 +532,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/Pump.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/Pump.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -555,7 +555,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/PipeP1.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/PipeP1.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0.4, 2.69, 0 ]
                 rootAttitude: [ 
@@ -578,7 +578,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/PipeP2.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/PipeP2.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0.41, 1.7, -0.16 ]
                 rootAttitude: [ 
@@ -601,7 +601,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/PipePS.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/PipePS.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0.04, 0 ]
                 rootAttitude: [ 
@@ -624,7 +624,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/PipeY.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/PipeY.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -647,7 +647,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/PipeBG1.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/PipeBG1.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -670,7 +670,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/PipeBG2.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/PipeBG2.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 8.23, 10.445, 0 ]
                 rootAttitude: [ 
@@ -694,7 +694,7 @@ items:
               plugin: Body
               class: BodyItem
               data: 
-                modelFile: "${SHARE}/model/TestPlant/1F/PipeBG3.body"
+                modelFile: "${SHARE}/RTF-TestPlant/model/1F/PipeBG3.body"
                 currentBaseLink: "BASE"
                 rootPosition: [ 0, 0, 0 ]
                 rootAttitude: [ 
@@ -717,7 +717,7 @@ items:
           plugin: Body
           class: BodyItem
           data: 
-            modelFile: "${SHARE}/model/TestPlant/2F/2F.body"
+            modelFile: "${SHARE}/RTF-TestPlant/model/2F/2F.body"
             currentBaseLink: "Floor"
             rootPosition: [ 0, 0, 0 ]
             rootAttitude: [ 
@@ -740,7 +740,7 @@ items:
           plugin: Body
           class: BodyItem
           data: 
-            modelFile: "${SHARE}/model/TestPlant/3F/3F.body"
+            modelFile: "${SHARE}/RTF-TestPlant/model/3F/3F.body"
             currentBaseLink: "Floor"
             rootPosition: [ 0, 0, 0 ]
             rootAttitude: [ 
@@ -763,7 +763,7 @@ items:
           plugin: Body
           class: BodyItem
           data: 
-            modelFile: "${SHARE}/model/TestPlant/4F/4F.body"
+            modelFile: "${SHARE}/RTF-TestPlant/model/4F/4F.body"
             currentBaseLink: "Floor"
             rootPosition: [ 0, 0, 0 ]
             rootAttitude: [ 
@@ -786,7 +786,7 @@ items:
           plugin: Body
           class: BodyItem
           data: 
-            modelFile: "${SHARE}/model/TestPlant/Chimney/Chimney.body"
+            modelFile: "${SHARE}/RTF-TestPlant/model/Chimney/Chimney.body"
             currentBaseLink: "Floor"
             rootPosition: [ 0, 0, 0 ]
             rootAttitude: [ 
